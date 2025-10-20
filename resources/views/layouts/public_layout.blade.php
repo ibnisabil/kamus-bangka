@@ -70,67 +70,67 @@
 
         <footer class="bg-gray-900 text-gray-300 {{ Request::is('/') ? 'mt-0' : 'mt-12' }}">
            <div class="container mx-auto px-6 py-10">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                    <div>
-                        <h3 class="font-bold text-lg text-white mb-4">Kontak</h3>
-                        <ul class="space-y-3">
-                            <li>
-                                <div class="flex items-center gap-3 group">
-                                    <a href="https://wa.me/6283179174543" target="_blank">
-                                        <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
-                                            <i class="fa-brands fa-whatsapp"></i>
-                                        </div>
-                                    </a>
-                                    <span class="group-hover:text-blue-400 transition-colors">0831-7917-4543</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="flex items-center gap-3 group">
-                                    <a href="mailto:tic.pangkalpinang@gmail.com">
-                                        <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
-                                            <i class="fa-solid fa-envelope"></i>
-                                        </div>
-                                    </a>
-                                    <span class="group-hover:text-blue-400 transition-colors">tic.pangkalpinang@gmail.com</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="flex items-center gap-3 group">
-                                    <a href="http://wonderful.pangkalpinangkota.go.id" target="_blank">
-                                        <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
-                                            <i class="fa-solid fa-globe"></i>
-                                        </div>
-                                    </a>
-                                    <span class="group-hover:text-blue-400 transition-colors">wonderful.pangkalpinangkota.go.id</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-white mb-4">Navigasi Cepat</h3>
-                        <ul class="space-y-3">
-                            <li><a href="#" class="hover:text-blue-400">Buku Digital Bahasa Melayu Bangka Belitung</a></li>
-                        </ul>
-                    </div>
-                    <div class="md:text-right">
-                        <h3 class="font-bold text-lg text-white mb-4">Ikuti Kami</h3>
-                        <div class="flex gap-4 md:justify-end">
-                            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"><i class="fa-brands fa-tiktok"></i></a>
-                            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"><i class="fa-brands fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
+               <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                   <div>
+                       <h3 class="font-bold text-lg text-white mb-4">Kontak</h3>
+                       <ul class="space-y-3">
+                           <li>
+                               <div class="flex items-center gap-3 group">
+                                   <a href="https://wa.me/6283179174543" target="_blank">
+                                       <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
+                                           <i class="fa-brands fa-whatsapp"></i>
+                                       </div>
+                                   </a>
+                                   <span class="group-hover:text-blue-400 transition-colors">0831-7917-4543</span>
+                               </div>
+                           </li>
+                           <li>
+                               <div class="flex items-center gap-3 group">
+                                   <a href="mailto:tic.pangkalpinang@gmail.com">
+                                       <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
+                                           <i class="fa-solid fa-envelope"></i>
+                                       </div>
+                                   </a>
+                                   <span class="group-hover:text-blue-400 transition-colors">tic.pangkalpinang@gmail.com</span>
+                               </div>
+                           </li>
+                           <li>
+                               <div class="flex items-center gap-3 group">
+                                   <a href="http://wonderful.pangkalpinangkota.go.id" target="_blank">
+                                       <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
+                                           <i class="fa-solid fa-globe"></i>
+                                       </div>
+                                   </a>
+                                   <span class="group-hover:text-blue-400 transition-colors">wonderful.pangkalpinangkota.go.id</span>
+                               </div>
+                           </li>
+                       </ul>
+                   </div>
+                   <div>
+                       <h3 class="font-bold text-lg text-white mb-4">Navigasi Cepat</h3>
+                       <ul class="space-y-3">
+                           <li><a href="#" class="hover:text-blue-400">Buku Digital Bahasa Melayu Bangka Belitung</a></li>
+                       </ul>
+                   </div>
+                   <div class="md:text-right">
+                       <h3 class="font-bold text-lg text-white mb-4">Ikuti Kami</h3>
+                       <div class="flex gap-4 md:justify-end">
+                           <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                           <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                           <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                           <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                       </div>
+                   </div>
+               </div>
            </div>
            <div class="border-t border-gray-700">
-                <div class="container mx-auto px-6 py-4 flex justify-between items-center text-sm">
-                    <div class="flex items-center gap-3">
-                        <img src="{{ asset('images/logo-dispar-white.png') }}" alt="Logo Dispar White" class="h-8 opacity-80">
-                        <span>© 2025 Dinas Pariwisata Kota Pangkalpinang. Semua Hak Dilindungi.</span>
-                    </div>
-                    <span>MRJ</span>
-                </div>
+               <div class="container mx-auto px-6 py-4 flex justify-between items-center text-sm">
+                   <div class="flex items-center gap-3">
+                       <img src="{{ asset('images/logo-dispar-white.png') }}" alt="Logo Dispar White" class="h-8 opacity-80">
+                       <span>© 2025 Dinas Pariwisata Kota Pangkalpinang. Semua Hak Dilindungi.</span>
+                   </div>
+                   <span>MRJ</span>
+               </div>
            </div>
         </footer>
     </div>
