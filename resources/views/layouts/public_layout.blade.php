@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
@@ -19,17 +18,14 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        'serif': ['"Playfair Display"', 'serif'],
-                        'sans': ['Poppins', 'sans-serif'],
-                    }
+                    fontFamily: { 'serif': ['"Playfair Display"', 'serif'], 'sans': ['Poppins', 'sans-serif'], }
                 }
             }
         }
     </script>
-
     <style>
         body { font-family: 'Poppins', sans-serif; }
+        #mobile-menu-panel { transition: transform 0.3s ease-in-out; }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -45,8 +41,8 @@
             <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
                 <a href="{{ route('beranda') }}" class="flex items-center gap-4">
                     <div class="logo-wrapper">
-                        <img src="{{ asset('images/logo_kota.png') }}" alt="Logo Kota Pangkalpinang Berwarna" class="logo-color h-12">
-                        <img src="{{ asset('images/logo_kota-white.png') }}" alt="Logo Kota Pangkalpinang Putih" class="logo-white h-12">
+                        <img src="{{ asset('images/logo_kota.png') }}" alt="Logo Kota Pangkalpinang Berwarna" class="logo-color h-12 w-auto">
+                        <img src="{{ asset('images/logo_kota-white.png') }}" alt="Logo Kota Pangkalpinang Putih" class="logo-white h-12 w-auto">
                     </div>
                     <div class="logo-wrapper">
                         <img src="{{ asset('images/LOGO-DISPAR.png') }}" alt="Logo Dispar Berwarna" class="logo-color h-10">
@@ -57,9 +53,14 @@
                         <span class="title-bangka text-white">Bangka</span>
                     </span>
                 </a>
-                <div>
+                <div class="hidden md:flex items-center gap-2">
                     <a href="{{ route('beranda') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Beranda</a>
                     <a href="{{ route('tentang') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Tentang</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none p-2 rounded-md hover:bg-white/10 transition-colors">
+                        <i class="fa-solid fa-bars fa-lg"></i>
+                    </button>
                 </div>
             </nav>
         </header>
@@ -68,6 +69,9 @@
             @yield('content')
         </main>
 
+        {{-- ========================================================= --}}
+        {{-- FOOTER YANG LENGKAP SUDAH DIKEMBALIKAN --}}
+        {{-- ========================================================= --}}
         <footer class="bg-gray-900 text-gray-300 {{ Request::is('/') ? 'mt-0' : 'mt-12' }}">
            <div class="container mx-auto px-6 py-10">
                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -132,29 +136,66 @@
                    <span>MRJ</span>
                </div>
            </div>
-        </footer>
+       </footer>
     </div>
 
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden"></div>
+    <div id="mobile-menu-panel" class="fixed top-0 right-0 h-full w-64 bg-gray-900 text-white shadow-lg z-50 transform translate-x-full md:hidden">
+        <div class="p-4 flex justify-between items-center border-b border-gray-700">
+            <h2 class="font-bold text-lg">Menu</h2>
+            <button id="close-menu-button" class="text-white p-2 rounded-md hover:bg-white/20"><i class="fa-solid fa-times fa-lg"></i></button>
+        </div>
+        <div class="flex flex-col mt-4">
+            <a href="{{ route('beranda') }}" class="block py-3 px-4 hover:bg-gray-800">Beranda</a>
+            <a href="{{ route('tentang') }}" class="block py-3 px-4 hover:bg-gray-800">Tentang</a>
+        </div>
+    </div>
+
+    {{-- ========================================================= --}}
+    {{-- SEMUA SCRIPT DIGABUNGKAN DI SINI --}}
+    {{-- ========================================================= --}}
     <script>
-        const header = document.getElementById('main-header');
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- Script untuk Menu Slide-in ---
+            const menuButton = document.getElementById('mobile-menu-button');
+            const closeButton = document.getElementById('close-menu-button');
+            const menuPanel = document.getElementById('mobile-menu-panel');
+            const overlay = document.getElementById('mobile-menu-overlay');
 
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
+            const openMenu = () => {
+                menuPanel.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+            };
+
+            const closeMenu = () => {
+                menuPanel.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+            };
+
+            menuButton.addEventListener('click', openMenu);
+            closeButton.addEventListener('click', closeMenu);
+            overlay.addEventListener('click', closeMenu);
+
+            // --- Script untuk Efek Scroll/Hover Header (DIKEMBALIKAN) ---
+            const header = document.getElementById('main-header');
+            const handleScroll = () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            };
+            header.addEventListener('mouseover', () => {
                 header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-        };
-
-        header.addEventListener('mouseover', () => {
-            header.classList.add('header-scrolled');
+            });
+            header.addEventListener('mouseout', () => {
+                if (window.scrollY <= 50) {
+                    header.classList.remove('header-scrolled');
+                }
+            });
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Panggil saat load untuk cek posisi awal
         });
-
-        header.addEventListener('mouseout', () => {
-            handleScroll();
-        });
-
-        window.addEventListener('scroll', handleScroll);
     </script>
 
     @stack('scripts')
