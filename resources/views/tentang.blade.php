@@ -3,6 +3,7 @@
 @section('content')
 
 {{-- SECTION 1: Hero dengan Background Gambar Laut --}}
+{{-- (Sudah Responsif) --}}
 <section class="relative bg-gray-800 text-white -mt-[96px] min-h-screen flex items-center">
     <div class="absolute inset-0">
         <img src="{{ asset('images/tentang-bg-1.jpg') }}" alt="Deburan ombak di pantai Bangka" class="w-full h-full object-cover">
@@ -15,7 +16,7 @@
                 <h1 class="font-serif text-4xl md:text-5xl font-bold leading-tight">
                     Kamus Digital<br>Bahasa Bangka
                 </h1>
-                
+
                 <div class="mt-6">
                     <p class="mb-4">
                         Kamus Digital Bahasa Bangka dibuat untuk melestarikan dan mempelajari bahasa Bangka. Ditujukan bagi masyarakat umum, pelajar, maupun peneliti agar warisan budaya daerah tetap hidup dan dikenal generasi mendatang.
@@ -37,6 +38,7 @@
 
 {{-- ========================================================= --}}
 {{-- SECTION 2: Tujuan Kami dengan Kartu (Carousel) --}}
+{{-- (Sudah Responsif) --}}
 {{-- ========================================================= --}}
 <section class="relative text-white min-h-screen flex items-center py-20 md:py-0">
      <div class="absolute inset-0">
@@ -46,7 +48,7 @@
     </div>
     <div class="relative z-10 container mx-auto px-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
+
             {{-- KOLOM KIRI: Teks "Tujuan Kami" --}}
             <div class="lg:pr-12">
                 <h2 class="font-serif text-5xl md:text-6xl font-bold mb-6">Tujuan Kami</h2>
@@ -60,7 +62,7 @@
                 {{-- Carousel --}}
                 <div class="swiper-container overflow-hidden">
                     <div class="swiper-wrapper flex items-stretch">
-                        
+
                         {{-- KARTU 1: Pelestarian --}}
                         <div class="swiper-slide h-full">
                             <div class="bg-black/30 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/10 h-full flex flex-col">
@@ -121,9 +123,9 @@
 
                 <div class="flex justify-between items-center mt-8 gap-6">
                     <div id="custom-pagination" class="text-xl font-bold text-white flex-shrink-0"></div>
-                
+
                     <div class="swiper-pagination swiper-pagination-progressbar swiper-pagination-horizontal !relative !w-full h-0.5 bg-white/20"></div>
-                
+
                     <div class="flex items-center gap-4 flex-shrink-0">
                         <div class="swiper-button-prev-custom text-white text-2xl cursor-pointer hover:text-blue-400 transition-colors">&lt;</div>
                         <div class="swiper-button-next-custom text-white text-2xl cursor-pointer hover:text-blue-400 transition-colors">&gt;</div>
@@ -138,6 +140,7 @@
 <hr>
 
 {{-- SECTION 3: Buku Kamus PDF dengan Video YouTube --}}
+{{-- (Sudah Responsif) --}}
 <section class="bg-white py-20 md:py-24">
     <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div class="rounded-xl overflow-hidden shadow-2xl">
@@ -188,7 +191,7 @@
             const swiper = new Swiper('.swiper-container', {
                 loop: true,
                 spaceBetween: 24,
-                slidesPerView: 2,
+                slidesPerView: 2, // Default (akan ditimpa oleh breakpoints)
 
                 pagination: {
                     el: '.swiper-pagination',
@@ -213,6 +216,7 @@
                     }
                 },
 
+                // (Sudah Responsif)
                 breakpoints: {
                     320: { slidesPerView: 1, spaceBetween: 20 },
                     640: { slidesPerView: 2, spaceBetween: 24 }

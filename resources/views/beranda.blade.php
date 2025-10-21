@@ -8,16 +8,20 @@
 
     <div class="relative z-20 container mx-auto px-6 pt-[96px] pb-16 min-h-screen">
 
-        <section class="max-w-3xl mx-auto text-center pt-12">
+        {{-- FIX RESPONSIVE: Mengubah 'pt-12' menjadi 'pt-8 md:pt-12' agar tidak terlalu jauh di mobile --}}
+        <section class="max-w-3xl mx-auto text-center pt-8 md:pt-12">
 
             <div class="space-y-1 mb-6">
-                <h1 class="text-5xl font-bold text-white leading-tight">
+                {{-- FIX RESPONSIVE: Mengubah 'text-5xl' menjadi 'text-3xl md:text-5xl' --}}
+                <h1 class="text-3xl md:text-5xl font-bold text-white leading-tight">
                     Selamat Datang
                 </h1>
-                <h2 class="text-5xl font-bold text-white">
+                {{-- FIX RESPONSIVE: Mengubah 'text-5xl' menjadi 'text-3xl md:text-5xl' --}}
+                <h2 class="text-3xl md:text-5xl font-bold text-white">
                     di <span class="text-blue-400">KABAKA</span>
                 </h2>
-                <h2 class="text-5xl font-bold text-white">
+                {{-- FIX RESPONSIVE: Mengubah 'text-5xl' menjadi 'text-3xl md:text-5xl' --}}
+                <h2 class="text-3xl md:text-5xl font-bold text-white">
                     Kamus Bahasa Bangka
                 </h2>
             </div>
@@ -26,7 +30,8 @@
                 Temukan, pelajari, dan lestarikan bahasa Bangka dengan mudah.
             </p>
 
-            <div class="bg-black/50 backdrop-blur-md rounded-3xl shadow-2xl p-6">
+            {{-- FIX RESPONSIVE: Mengubah 'p-6' menjadi 'p-4 md:p-6' agar padding di mobile tidak terlalu besar --}}
+            <div class="bg-black/50 backdrop-blur-md rounded-3xl shadow-2xl p-4 md:p-6">
 
                 <div class="text-center mb-6">
                     <h2 class="text-white text-2xl font-bold flex items-center justify-center gap-3">
@@ -40,6 +45,7 @@
                 </div>
 
                 <div class="space-y-4">
+                    {{-- Ini sudah responsif (grid-cols-1 md:grid-cols-[...]) --}}
                     <div class="grid grid-cols-1 md:grid-cols-[2fr,2fr,1fr] gap-4">
                         <input
                             type="text"
@@ -57,6 +63,7 @@
                             <option class="bg-gray-700 text-white" value="Pangkalpinang">Pangkalpinang</option>
                         </select>
 
+                        {{-- Ini sudah responsif (hidden md:inline) --}}
                         <button type="button" id="search-button" class="w-full bg-blue-600 text-white rounded-lg px-4 py-3 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-black/50 transition duration-300 font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl active:scale-98">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <span class="hidden md:inline">Cari</span>
@@ -95,9 +102,13 @@
                 return;
             }
 
+            /* FIX RESPONSIVE (JS):
+              - Mengubah 'grid-cols-2' menjadi 'grid-cols-1 sm:grid-cols-2'
+              - Ini akan membuat skeleton card menumpuk di layar <sm
+            */
             const skeletonCard = `
                 <div class="bg-white rounded-lg p-6 animate-pulse">
-                    <div class="grid grid-cols-2 gap-4 items-center mb-4 border-b border-gray-200 pb-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center mb-4 border-b border-gray-200 pb-4">
                         <div class="text-center space-y-2">
                             <div class="h-4 bg-gray-200 rounded-md w-1/2 mx-auto"></div>
                             <div class="h-6 bg-gray-300 rounded-md w-3/4 mx-auto"></div>
@@ -143,7 +154,12 @@
                         const definisiHtml = item.definisi ? `<div class="flex gap-3"><i class="fa-solid fa-book-open text-green-500 mt-1"></i><div><h4 class="font-semibold text-gray-800">Definisi:</h4><p class="text-sm">${item.definisi}</p></div></div>` : '';
                         const contohHtml = item.contoh ? `<div class="flex gap-3"><i class="fa-solid fa-quote-left text-yellow-500 mt-1"></i><div><h4 class="font-semibold text-gray-800">Contoh:</h4><p class="italic text-sm">"${item.contoh}"</p></div></div>` : '';
                         const sinonimHtml = item.sinonim ? `<div class="flex gap-3"><i class="fa-solid fa-tags text-orange-500 mt-1"></i><div><h4 class="font-semibold text-gray-800">Sinonim:</h4><p class="text-sm">${item.sinonim}</p></div></div>` : '';
-                        const resultCard = `<div class="bg-white rounded-lg p-6 text-gray-800 animate-fade-in"><div class="grid grid-cols-2 gap-4 items-center mb-4 border-b border-gray-200 pb-4"><div class="text-center"><span class="text-sm text-blue-600 font-semibold">Indonesia</span><p class="text-xl font-bold">${item.arti_indonesia}</p></div><div class="text-center"><span class="text-sm text-red-600 font-semibold">Bangka</span><p class="text-xl font-bold">${item.kata_bangka}</p><span class="text-xs text-gray-500 font-medium uppercase tracking-wider">(${item.dialek})</span></div></div><div class="space-y-4 text-gray-600">${definisiHtml}${contohHtml}${sinonimHtml}</div></div>`;
+
+                        /* FIX RESPONSIVE (JS):
+                          - Mengubah 'grid-cols-2' menjadi 'grid-cols-1 sm:grid-cols-2'
+                          - Ini akan membuat kartu hasil (Indo vs Bangka) menumpuk di layar <sm
+                        */
+                        const resultCard = `<div class="bg-white rounded-lg p-6 text-gray-800 animate-fade-in"><div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center mb-4 border-b border-gray-200 pb-4"><div class="text-center"><span class="text-sm text-blue-600 font-semibold">Indonesia</span><p class="text-xl font-bold">${item.arti_indonesia}</p></div><div class="text-center"><span class="text-sm text-red-600 font-semibold">Bangka</span><p class="text-xl font-bold">${item.kata_bangka}</p><span class="text-xs text-gray-500 font-medium uppercase tracking-wider">(${item.dialek})</span></div></div><div class="space-y-4 text-gray-600">${definisiHtml}${contohHtml}${sinonimHtml}</div></div>`;
                         resultsContainer.innerHTML += resultCard;
                     });
                 })
@@ -177,4 +193,3 @@
 </script>
 <style> @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } } .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; } </style>
 @endpush
-
