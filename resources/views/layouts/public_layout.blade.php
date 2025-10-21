@@ -184,11 +184,15 @@
                         </ul>
                     </div>
                     <div>
-                        <h3 class="font-bold text-lg text-white mb-4">Navigasi Cepat</h3>
-                        <ul class="space-y-3">
-                            <li><a href="#" class="hover:text-blue-400">Buku Digital Bahasa Melayu Bangka Belitung</a></li>
-                        </ul>
-                    </div>
+    <h3 class="font-bold text-lg text-white mb-4">Navigasi Cepat</h3>
+    <ul class="space-y-3">
+        <li>
+            <a href="{{ route('buku.digital') }}" class="hover:text-blue-400">
+                Buku Digital Bahasa Melayu Bangka Belitung
+            </a>
+        </li>
+    </ul>
+</div>
                     <div class="md:text-right">
                         <h3 class="font-bold text-lg text-white mb-4">Ikuti Kami</h3>
                         <div class="flex gap-4 md:justify-end">
