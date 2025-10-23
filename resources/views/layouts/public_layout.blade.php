@@ -105,7 +105,7 @@
         {{-- FIX 3: Mengubah z-index dari z-50 menjadi z-30 --}}
         {{-- ========================================================= --}}
         <header id="main-header" class="sticky top-0 z-30">
-            <nav class="container mx-auto px-6 py-6 flex justify-between items-center">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
                 <a href="{{ route('beranda') }}" class="flex items-center gap-4">
                     <div class="logo-wrapper">
                         <img src="{{ asset('images/logo_kota.png') }}" alt="Logo Kota Pangkalpinang Berwarna" class="logo-color h-12 w-auto">

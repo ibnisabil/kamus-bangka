@@ -12,7 +12,7 @@
 
     <div class="relative z-10 container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full">
-            <div class="md:pr-8 mt-16">
+            <div class="md:pr-8 mt-32">
                 <h1 class="font-serif text-4xl md:text-5xl font-bold leading-tight">
                     Kamus Digital<br>Bahasa Bangka
                 </h1>
