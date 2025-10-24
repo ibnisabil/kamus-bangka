@@ -64,7 +64,7 @@
                         {{-- KARTU 1: Pelestarian --}}
                         <div class="swiper-slide h-full">
                             <div class="bg-black/30 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/10 h-full flex flex-col">
-                                <img src="https://images.unsplash.com/photo-1542856338-e2b26c710688?q=80&w=1964&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kain cual khas Bangka" class="w-full h-64 object-cover flex-shrink-0">
+                                <img src="{{ asset('images/pelestarian.png') }}" alt="Kain cual khas Bangka" class="w-full h-64 object-cover flex-shrink-0">
                                 <div class="p-6 flex-grow">
                                     <h3 class="font-bold text-xl mb-2">Pelestarian</h3>
                                     <p class="text-gray-400 text-sm">Menjaga bahasa Bangka agar tetap hidup di tengah modernisasi.</p>
@@ -75,7 +75,7 @@
                         {{-- KARTU 2: Warisan Budaya --}}
                         <div class="swiper-slide h-full">
                             <div class="bg-black/30 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/10 h-full flex flex-col">
-                                <img src="https://images.unsplash.com/photo-1552233816-234005b76c5f?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Warisan budaya Bangka" class="w-full h-64 object-cover flex-shrink-0">
+                                <img src="{{ asset('images/warisan-budaya.png') }}" alt="Warisan budaya Bangka" class="w-full h-64 object-cover flex-shrink-0">
                                 <div class="p-6 flex-grow">
                                     <h3 class="font-bold text-xl mb-2">Warisan Budaya</h3>
                                     <p class="text-gray-400 text-sm">Mendokumentasikan kearifan lokal, cerita rakyat, dan tradisi Bangka.</p>
@@ -86,7 +86,7 @@
                         {{-- KARTU 3: Riset & Data --}}
                         <div class="swiper-slide h-full">
                             <div class="bg-black/30 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/10 h-full flex flex-col">
-                                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2128&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Penelitian dan data" class="w-full h-64 object-cover flex-shrink-0">
+                                <img src="{{ asset('images/riset-data.png') }}" alt="Penelitian dan data" class="w-full h-64 object-cover flex-shrink-0">
                                 <div class="p-6 flex-grow">
                                     <h3 class="font-bold text-xl mb-2">Riset & Data</h3>
                                     <p class="text-gray-400 text-sm">Menjadi sumber data akurat bagi peneliti bahasa dan budaya lokal.</p>
@@ -97,7 +97,7 @@
                         {{-- KARTU 4: Komunitas --}}
                         <div class="swiper-slide h-full">
                             <div class="bg-black/30 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/10 h-full flex flex-col">
-                                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Orang-orang berkumpul" class="w-full h-64 object-cover flex-shrink-0">
+                                <img src="{{ asset('images/komunitas.png') }}" alt="Orang-orang berkumpul" class="w-full h-64 object-cover flex-shrink-0">
                                 <div class="p-6 flex-grow">
                                     <h3 class="font-bold text-xl mb-2">Komunitas</h3>
                                     <p class="text-gray-400 text-sm">Wadah bagi pengguna untuk berkontribusi & berbagi pengetahuan.</p>
@@ -108,7 +108,7 @@
                         {{-- KARTU 5: Aksesibilitas --}}
                         <div class="swiper-slide h-full">
                             <div class="bg-black/30 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/10 h-full flex flex-col">
-                                <img src="https://images.unsplash.com/photo-1585224328409-5006197b173b?q=80&w=1974&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ponsel dan laptop" class="w-full h-64 object-cover flex-shrink-0">
+                                <img src="{{ asset('images/aksesibilitas.png') }}" alt="Ponsel dan laptop" class="w-full h-64 object-cover flex-shrink-0">
                                 <div class="p-6 flex-grow">
                                     <h3 class="font-bold text-xl mb-2">Aksesibilitas</h3>
                                     <p class="text-gray-400 text-sm">Mudah diakses di berbagai perangkat, kapan saja & di mana saja.</p>
