@@ -4,7 +4,7 @@
 
 <div class="relative -mt-[96px]">
     <video src="{{ asset('videos/background-video.mp4') }}" autoplay loop muted playsinline class="absolute z-0 w-full h-full object-cover"></video>
-    <div class="absolute z-10 w-full h-full bg-black opacity-30"></div>
+    <div class="absolute z-10 w-full h-full bg-black opacity-50"></div>
 
     <div class="relative z-20 container mx-auto px-6 pt-[96px] pb-16 min-h-screen">
 
@@ -12,22 +12,23 @@
         <section class="max-w-3xl mx-auto text-center pt-8 md:pt-12">
 
             <div class="space-y-1 mb-12">
-    {{-- FIX RESPONSIVE: Mengubah 'text-5xl' menjadi 'text-3xl md:text-5xl' --}}
-    <h1 class="text-3xl md:text-5xl font-bold text-white leading-tight">
+    {{-- Ganti 'font-playfair' dengan 'font-serif' bawaan Tailwind --}}
+    {{-- 🚀 UKURAN BARU: text-4xl & md:text-5xl --}}
+    <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight font-serif">
         Selamat Datang
     </h1>
-    {{-- FIX RESPONSIVE: Mengubah 'text-5xl' menjadi 'text-3xl md:text-5xl' --}}
-    <h2 class="text-3xl md:text-5xl font-bold text-white">
+    {{-- 🚀 UKURAN BARU: text-4xl & md:text-5xl --}}
+    <h2 class="text-4xl md:text-5xl font-bold text-white font-serif">
         di <span class="bg-gradient-to-r from-blue-400 to-red-400 text-transparent bg-clip-text">KABAKA</span>
     </h2>
-    {{-- FIX RESPONSIVE: Mengubah 'text-5xl' menjadi 'text-3xl md:text-5xl' --}}
-    <h2 class="text-3xl md:text-5xl font-bold text-white">
+    {{-- 🚀 UKURAN BARU: text-4xl & md:text-5xl --}}
+    <h2 class="text-4xl md:text-5xl font-bold text-white font-serif">
         Kamus Bahasa Bangka
     </h2>
 
     {{-- PERBAIKAN: Pindahkan elemen P ke dalam container utama untuk konsistensi spacing --}}
     {{-- Hapus 'mb-8' dan ganti dengan 'mt-4' atau 'mt-6' untuk jarak yang lebih terikat --}}
-    <p class="text-white/100 text-md md:text-lg max-w-2xl mx-auto mt-4">
+    <p class="text-white/100 text-md md:text-lg max-w-2xl mx-auto mt-6">
         Temukan, pelajari, dan lestarikan bahasa Bangka dengan mudah.
     </p>
 </div>
@@ -43,8 +44,20 @@
                     {{-- ========================================================= --}}
                     {{-- PERUBAHAN WARNA TEKS KEMBALI KE ASAL DI SINI --}}
                     {{-- ========================================================= --}}
-                    <p class="text-gray-300 mt-2">Mari mulai mencari kata padanan <strong>Bahasa Indonesia</strong> <i class="fa-solid fa-exchange-alt text-gray-400"></i> <strong>Bahasa Bangka</strong></p>
-                </div>
+                    <p class="text-white mt-2">Mari mulai mencari kata padanan
+    <span class="text-blue-400"><strong>Bahasa Indonesia</strong></span>
+
+    {{-- 🌟 PERUBAHAN WARNA DASAR IKON MENJADI EMAS/ORANYE --}}
+    <i class="fa-solid fa-exchange-alt text-yellow-500
+        transition duration-300
+        hover:rotate-180
+        hover:text-yellow-300
+        cursor-pointer"
+    ></i>
+
+    <span class="text-red-400"><strong>Bahasa Bangka</strong></span>
+</p>
+</div>
 
                 <div class="space-y-4">
                     {{-- Ini sudah responsif (grid-cols-1 md:grid-cols-[...]) --}}
