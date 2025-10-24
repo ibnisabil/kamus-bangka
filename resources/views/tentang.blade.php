@@ -34,8 +34,6 @@
     </div>
 </section>
 
-<hr>
-
 {{-- ========================================================= --}}
 {{-- SECTION 2: Tujuan Kami dengan Kartu (Carousel) --}}
 {{-- (Sudah Responsif) --}}
