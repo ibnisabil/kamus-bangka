@@ -106,7 +106,7 @@
         {{-- ========================================================= --}}
         <header id="main-header" class="sticky top-0 z-30">
             <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="{{ route('beranda') }}" class="flex items-center gap-4">
+                <a href="{{ route('beranda') }}" class="flex items-center gap-2">
                     <div class="logo-wrapper">
                         <img src="{{ asset('images/logo_kota.png') }}" alt="Logo Kota Pangkalpinang Berwarna" class="logo-color h-12 w-auto">
                         <img src="{{ asset('images/logo_kota-white.png') }}" alt="Logo Kota Pangkalpinang Putih" class="logo-white h-12 w-auto">
