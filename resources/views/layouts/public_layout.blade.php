@@ -130,6 +130,7 @@
         <div class="hidden md:flex items-center gap-2">
             <a href="{{ route('beranda') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Beranda</a>
             <a href="{{ route('tentang') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Tentang</a>
+            <a href="{{ route('kontak.lengkap') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Kontak Kami</a>
         </div>
         <div class="md:hidden">
             <button id="mobile-menu-button" class="text-white focus:outline-none p-2 rounded-md hover:bg-white/10 transition-colors [.header-scrolled_&]:text-gray-900">
@@ -152,16 +153,18 @@
                         <h3 class="font-bold text-lg text-white mb-4">Kontak</h3>
                         <ul class="space-y-3">
                             <li>
-                                <div class="flex items-center gap-3 group">
-                                    <a href="https://wa.me/6283179174543" target="_blank">
-                                        <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
-                                            <i class="fa-brands fa-whatsapp"></i>
-                                        </div>
-                                    </a>
-                                    <span class="group-hover:text-blue-400 transition-colors">0831-7917-4543</span>
-                                </div>
-                            </li>
-                            <li>
+    <div class="flex items-center gap-3 group">
+        {{-- MENGUBAH LINK DARI WA KE TENTANG --}}
+        <a href="{{ route('kontak.lengkap') }}">
+            <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
+                {{-- 🌟 IKON DIUBAH MENJADI USER --}}
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </a>
+        {{-- 🌟 TEKS DIUBAH SESUAI PERMINTAAN --}}
+        <span class="group-hover:text-blue-400 transition-colors">Informasi Lengkap Kontak</span>
+    </div>
+</li>
     <div class="flex items-center gap-3 group">
         <a id="email-link"
            href="mailto:tic.pangkalpinang@gmail.com"
@@ -248,6 +251,7 @@ Access-Control-Allow-Origin: https://gemini.google.com
         <div class="flex flex-col mt-4">
             <a href="{{ route('beranda') }}" class="block py-3 px-4 hover:bg-gray-800">Beranda</a>
             <a href="{{ route('tentang') }}" class="block py-3 px-4 hover:bg-gray-800">Tentang</a>
+            <a href="{{ route('kontak.lengkap') }}" class="block py-3 px-4 hover:bg-gray-800">Kontak Kami</a>
         </div>
     </div>
 
