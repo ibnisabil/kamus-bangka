@@ -105,36 +105,39 @@
         {{-- FIX 3: Mengubah z-index dari z-50 menjadi z-30 --}}
         {{-- ========================================================= --}}
         <header id="main-header" class="sticky top-0 z-30">
-            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-                <a href="{{ route('beranda') }}" class="flex items-center gap-2">
-                    <div class="logo-wrapper">
-                        <img src="{{ asset('images/logo_kota.png') }}" alt="Logo Kota Pangkalpinang Berwarna" class="logo-color h-12 w-auto">
-                        <img src="{{ asset('images/logo_kota-white.png') }}" alt="Logo Kota Pangkalpinang Putih" class="logo-white h-12 w-auto">
-                    </div>
-                    <div class="logo-wrapper">
-                        <img src="{{ asset('images/LOGO-DISPAR.png') }}" alt="Logo Dispar Berwarna" class="logo-color h-10">
-                        <img src="{{ asset('images/logo-dispar-white.png') }}" alt="Logo Dispar Putih" class="logo-white h-10">
-                    </div>
-                    <span class="text-2xl font-bold">
-                        <span class="title-kamus text-white">Kamus</span>
-                        <span class="title-bangka text-white">Bangka</span>
-                    </span>
-                </a>
-                <div class="hidden md:flex items-center gap-2">
-                    <a href="{{ route('beranda') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Beranda</a>
-                    <a href="{{ route('tentang') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Tentang</a>
-                </div>
-                <div class="md:hidden">
-                    {{-- ========================================================= --}}
-                    {{-- FIX 2: Menambahkan [.header-scrolled_&]:text-gray-900 --}}
-                    {{-- Ini akan mengubah warna ikon hamburger saat header di-scroll --}}
-                    {{-- ========================================================= --}}
-                    <button id="mobile-menu-button" class="text-white focus:outline-none p-2 rounded-md hover:bg-white/10 transition-colors [.header-scrolled_&]:text-gray-900">
-                        <i class="fa-solid fa-bars fa-lg"></i>
-                    </button>
-                </div>
-            </nav>
-        </header>
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        {{-- Penambahan 'items-center' sudah benar. Fokus pada penyelarasan logo-logo di dalamnya. --}}
+        <a href="{{ route('beranda') }}" class="flex items-center gap-3">
+
+            {{-- Logo Kota (h-12) --}}
+            <div class="logo-wrapper flex items-center h-12">
+                <img src="{{ asset('images/logo_kota.png') }}" alt="Logo Kota Pangkalpinang Berwarna" class="logo-color h-12 w-12 object-contain">
+                <img src="{{ asset('images/logo_kota-white.png') }}" alt="Logo Kota Pangkalpinang Putih" class="logo-white h-12 w-12 object-contain">
+            </div>
+
+            {{-- Logo Dispar (h-10) - Dibuat flex dan tingginya disamakan dengan Logo Kota (h-12) agar penempatan vertikalnya sesuai --}}
+            <div class="logo-wrapper flex items-center h-12">
+                {{-- Logo Dispar yang sebenarnya hanya h-10 akan otomatis terpusat di dalam div h-12 ini --}}
+                <img src="{{ asset('images/LOGO-DISPAR.png') }}" alt="Logo Dispar Berwarna" class="logo-color h-10 object-contain">
+                <img src="{{ asset('images/logo-dispar-white.png') }}" alt="Logo Dispar Putih" class="logo-white h-10 object-contain">
+            </div>
+
+            <span class="text-2xl font-bold">
+                <span class="title-kamus text-white">Kamus</span>
+                <span class="title-bangka text-white">Bangka</span>
+            </span>
+        </a>
+        <div class="hidden md:flex items-center gap-2">
+            <a href="{{ route('beranda') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Beranda</a>
+            <a href="{{ route('tentang') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Tentang</a>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-white focus:outline-none p-2 rounded-md hover:bg-white/10 transition-colors [.header-scrolled_&]:text-gray-900">
+                <i class="fa-solid fa-bars fa-lg"></i>
+            </button>
+        </div>
+    </nav>
+</header>
 
         <main class="flex-grow">
             @yield('content')

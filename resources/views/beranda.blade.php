@@ -11,24 +11,26 @@
         {{-- FIX RESPONSIVE: Mengubah 'pt-12' menjadi 'pt-8 md:pt-12' agar tidak terlalu jauh di mobile --}}
         <section class="max-w-3xl mx-auto text-center pt-8 md:pt-12">
 
-            <div class="space-y-1 mb-6">
-                {{-- FIX RESPONSIVE: Mengubah 'text-5xl' menjadi 'text-3xl md:text-5xl' --}}
-                <h1 class="text-3xl md:text-5xl font-bold text-white leading-tight">
-                    Selamat Datang
-                </h1>
-                {{-- FIX RESPONSIVE: Mengubah 'text-5xl' menjadi 'text-3xl md:text-5xl' --}}
-                <h2 class="text-3xl md:text-5xl font-bold text-white">
-                    di <span class="text-blue-400">KABAKA</span>
-                </h2>
-                {{-- FIX RESPONSIVE: Mengubah 'text-5xl' menjadi 'text-3xl md:text-5xl' --}}
-                <h2 class="text-3xl md:text-5xl font-bold text-white">
-                    Kamus Bahasa Bangka
-                </h2>
-            </div>
+            <div class="space-y-1 mb-12">
+    {{-- FIX RESPONSIVE: Mengubah 'text-5xl' menjadi 'text-3xl md:text-5xl' --}}
+    <h1 class="text-3xl md:text-5xl font-bold text-white leading-tight">
+        Selamat Datang
+    </h1>
+    {{-- FIX RESPONSIVE: Mengubah 'text-5xl' menjadi 'text-3xl md:text-5xl' --}}
+    <h2 class="text-3xl md:text-5xl font-bold text-white">
+        di <span class="bg-gradient-to-r from-blue-400 to-red-400 text-transparent bg-clip-text">KABAKA</span>
+    </h2>
+    {{-- FIX RESPONSIVE: Mengubah 'text-5xl' menjadi 'text-3xl md:text-5xl' --}}
+    <h2 class="text-3xl md:text-5xl font-bold text-white">
+        Kamus Bahasa Bangka
+    </h2>
 
-            <p class="text-white/80 text-md md:text-lg mb-8 max-w-2xl mx-auto">
-                Temukan, pelajari, dan lestarikan bahasa Bangka dengan mudah.
-            </p>
+    {{-- PERBAIKAN: Pindahkan elemen P ke dalam container utama untuk konsistensi spacing --}}
+    {{-- Hapus 'mb-8' dan ganti dengan 'mt-4' atau 'mt-6' untuk jarak yang lebih terikat --}}
+    <p class="text-white/100 text-md md:text-lg max-w-2xl mx-auto mt-4">
+        Temukan, pelajari, dan lestarikan bahasa Bangka dengan mudah.
+    </p>
+</div>
 
             {{-- FIX RESPONSIVE: Mengubah 'p-6' menjadi 'p-4 md:p-6' agar padding di mobile tidak terlalu besar --}}
             <div class="bg-black/50 backdrop-blur-md rounded-3xl shadow-2xl p-4 md:p-6">
