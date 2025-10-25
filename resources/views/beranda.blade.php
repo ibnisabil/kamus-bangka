@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="relative -mt-[96px]">
+<div class="relative -mt-[80px]">
     <video src="{{ asset('videos/background-video.mp4') }}" autoplay loop muted playsinline class="absolute z-0 w-full h-full object-cover"></video>
     <div class="absolute z-10 w-full h-full bg-black opacity-50"></div>
 

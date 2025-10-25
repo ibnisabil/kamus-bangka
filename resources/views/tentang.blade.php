@@ -3,7 +3,7 @@
 @section('content')
 
 {{-- SECTION 1: Hero dengan Background Gambar Laut --}}
-<section class="relative bg-gray-800 text-white -mt-[96px] min-h-screen flex items-center">
+<section class="relative bg-gray-800 text-white -mt-[80px] min-h-screen flex items-center">
     <div class="absolute inset-0">
         <img src="{{ asset('images/tentang-bg-1.jpg') }}" alt="Deburan ombak di pantai Bangka" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-black opacity-60"></div>
