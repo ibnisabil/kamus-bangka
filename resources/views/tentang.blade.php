@@ -64,7 +64,7 @@
                                 data-title="Pelestarian Bahasa"
                                 data-image="{{ asset('images/pelestarian.png') }}"
                                 data-description="Bahasa Bangka adalah jiwa dari identitas masyarakat. Tujuan kami adalah mendigitalisasi dan mendokumentasikan setiap kata dan nuansa dialek agar tidak hilang ditelan waktu, memastikan warisan linguistik ini terus diwariskan kepada generasi-generasi muda Bangka Belitung.">
-                                
+
                                 <div class="bg-black/30 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/10 h-full flex flex-col hover:border-blue-400 transition duration-300">
                                     <img src="{{ asset('images/pelestarian.png') }}" alt="Kain cual khas Bangka" class="w-full h-64 object-cover flex-shrink-0">
                                     <div class="p-6 flex-grow">
@@ -189,7 +189,7 @@
 <div id="detail-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-80 p-4 overflow-y-auto">
     <div class="bg-gray-800 rounded-lg shadow-2xl w-full max-w-sm sm:max-w-md md:max-w-4xl mx-auto transform transition-all my-auto max-h-[90vh] overflow-hidden">
         <div class="relative grid grid-cols-1 md:grid-cols-2 h-full">
-            
+
             {{-- Bagian Kiri: Gambar --}}
             {{-- Menggunakan `h-48` di mobile dan `md:h-full` di desktop untuk keseimbangan --}}
             <div class="h-48 md:h-full">
@@ -201,7 +201,7 @@
             <div class="p-6 sm:p-8 text-white flex flex-col **flex-grow overflow-y-auto**">
                 <h3 id="modal-title" class="font-serif text-2xl sm:text-3xl font-bold mb-3 border-b border-white/20 pb-2"></h3>
                 <p id="modal-description" class="text-gray-300 text-sm sm:text-base leading-relaxed"></p>
-                
+
                 <button id="close-modal-btn" class="mt-6 self-start px-5 py-2 border border-white rounded-lg hover:bg-white hover:text-gray-800 transition-colors duration-300 text-sm sm:text-base">
                     Tutup
                 </button>
