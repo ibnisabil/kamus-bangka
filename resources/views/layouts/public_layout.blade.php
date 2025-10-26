@@ -11,6 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    {{-- START: INTEGRASI AOS (Animate On Scroll) CSS --}}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    {{-- END: INTEGRASI AOS --}}
+
     @stack('styles')
 
     <script>
@@ -32,16 +36,12 @@
         }
         body {
             font-family: 'Poppins', sans-serif;
-            /* PINDAHKAN 'overflow-x: hidden;' HANYA KE BODY */
             overflow-x: hidden;
         }
         #mobile-menu-panel { transition: transform 0.3s ease-in-out; }
 
-        /* File CSS Kustom untuk Kamus Bangka */
-
         /* == PENGATURAN HEADER == */
         #main-header {
-            /* PERUBAHAN: Durasi dipercepat dari 0.3s menjadi 0.2s */
             transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out;
         }
 
@@ -52,7 +52,6 @@
 
         /* == PENGATURAN WARNA TEKS == */
         .title-kamus, .title-bangka, .menu-link {
-            /* PERUBAHAN: Durasi dipercepat dari 0.3s menjadi 0.2s */
             transition: color 0.2s ease-out;
         }
 
@@ -72,7 +71,6 @@
 
         .logo-wrapper img {
             position: relative;
-            /* PERUBAHAN: Durasi dipercepat dari 0.3s menjadi 0.2s */
             transition: opacity 0.2s ease-out;
         }
 
@@ -96,18 +94,10 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-    {{-- ========================================================= --}}
-    {{-- PERBAIKAN STICKY: Hapus 'overflow-x-hidden' dari sini. --}}
-    {{-- Properti 'overflow' pada elemen induk merusak 'position: sticky'. --}}
-    {{-- ========================================================= --}}
     <div class="relative z-20 flex flex-col min-h-screen">
 
-        {{-- ========================================================= --}}
-        {{-- FIX 3: Mengubah z-index dari z-50 menjadi z-30 --}}
-        {{-- ========================================================= --}}
         <header id="main-header" class="sticky top-0 z-30">
             <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-                {{-- Penambahan 'items-center' sudah benar. Fokus pada penyelarasan logo-logo di dalamnya. --}}
                 <a href="{{ route('beranda') }}" class="flex items-center gap-3">
 
                     {{-- Logo Kota (h-12) --}}
@@ -116,9 +106,8 @@
                         <img src="{{ asset('images/logo_kota-white.png') }}" alt="Logo Kota Pangkalpinang Putih" class="logo-white h-12 w-12 object-contain">
                     </div>
 
-                    {{-- Logo Dispar (h-10) - Dibuat flex dan tingginya disamakan dengan Logo Kota (h-12) agar penempatan vertikalnya sesuai --}}
+                    {{-- Logo Dispar (h-10) --}}
                     <div class="logo-wrapper flex items-center h-12">
-                        {{-- Logo Dispar yang sebenarnya hanya h-10 akan otomatis terpusat di dalam div h-12 ini --}}
                         <img src="{{ asset('images/LOGO-DISPAR.png') }}" alt="Logo Dispar Berwarna" class="logo-color h-10 object-contain">
                         <img src="{{ asset('images/logo-dispar-white.png') }}" alt="Logo Dispar Putih" class="logo-white h-10 object-contain">
                     </div>
@@ -145,9 +134,8 @@
             @yield('content')
         </main>
 
-        {{-- Footer Anda (Tidak diubah, sudah benar) --}}
+        {{-- Footer --}}
         <footer class="bg-gray-900 text-gray-300 {{ Request::is('/') ? 'mt-0' : 'mt-6' }}">
-            {{-- ... Konten footer lengkap Anda ... --}}
             <div class="container mx-auto px-6 py-10">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                     <div>
@@ -155,14 +143,11 @@
                         <ul class="space-y-3">
                             <li>
                                 <div class="flex items-center gap-3 group">
-                                    {{-- MENGUBAH LINK DARI WA KE TENTANG --}}
                                     <a href="{{ route('kontak.lengkap') }}">
                                         <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
-                                            {{-- 🌟 IKON DIUBAH MENJADI USER --}}
                                             <i class="fa-solid fa-user"></i>
                                         </div>
                                     </a>
-                                    {{-- 🌟 TEKS DIUBAH SESUAI PERMINTAAN --}}
                                     <span class="group-hover:text-blue-400 transition-colors">Informasi Lengkap Kontak</span>
                                 </div>
                             </li>
@@ -211,18 +196,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-700">
-                {{--
-                    FIX RESPONSIVE:
-                    - Mengubah 'flex' menjadi 'flex-col md:flex-row' agar menumpuk di mobile.
-                    - Menambah 'gap-4 md:gap-2' untuk memberi jarak saat menumpuk.
-                    - Mengubah 'justify-between' menjadi 'justify-center md:justify-between'
-                --}}
                 <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-center md:justify-between items-center text-sm gap-4 md:gap-2">
-                    {{--
-                        FIX RESPONSIVE:
-                        - Menambah 'flex-col sm:flex-row' agar logo & teks bisa menumpuk di layar <sm.
-                        - Menambah 'text-center sm:text-left' untuk perataan teks.
-                    --}}
                     <div class="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
                         <img src="{{ asset('images/logo-dispar-white.png') }}" alt="Logo Dispar White" class="h-8 opacity-80">
                         <span>© 2025 Dinas Pariwisata Kota Pangkalpinang. Semua Hak Dilindungi.</span>
@@ -233,14 +207,8 @@
         </footer>
     </div>
 
-    {{-- ========================================================= --}}
-    {{-- FIX 3: Mengubah z-index dari z-50 menjadi z-40 --}}
-    {{-- ========================================================= --}}
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
 
-    {{-- ========================================================= --}}
-    {{-- FIX 3: Memastikan z-index ini (z-50) adalah yang tertinggi --}}
-    {{-- ========================================================= --}}
     <div id="mobile-menu-panel" class="fixed top-0 right-0 h-full w-64 bg-gray-900 text-white shadow-lg z-50 transform translate-x-full md:hidden">
         <div class="p-4 flex justify-between items-center border-b border-gray-700">
             <h2 class="font-bold text-lg">Menu</h2>
@@ -253,7 +221,10 @@
         </div>
     </div>
 
-    {{-- Script (Tidak diubah, sudah benar dan efisien) --}}
+    {{-- START: INTEGRASI AOS (Animate On Scroll) JS --}}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    {{-- END: INTEGRASI AOS --}}
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // --- Script untuk Menu Slide-in ---
@@ -268,7 +239,7 @@
 
                 menuButton.addEventListener('click', openMenu);
                 closeButton.addEventListener('click', closeMenu);
-                overlay.addEventListener('click', closeMenu); // <-- Ini sudah benar
+                overlay.addEventListener('click', closeMenu);
             }
 
             // --- Script Efisien untuk Efek Scroll & Hover Header ---
@@ -290,22 +261,27 @@
                 window.addEventListener('scroll', updateHeaderState, { passive: true });
                 updateHeaderState();
             }
+
+            // --- Script untuk Email Link ---
             const emailLink = document.getElementById('email-link');
             if (emailLink) {
-                // Deteksi apakah ini perangkat mobile
                 const isMobile = /Mobi/i.test(navigator.userAgent);
-
-                // Link untuk membuka web Gmail compose
                 const gmailWebLink = 'https://mail.google.com/mail/?view=cm&fs=1&to=tic.pangkalpinang@gmail.com';
 
                 if (!isMobile) {
-                    // Jika BUKAN mobile (berarti desktop/laptop)
-                    // Ubah href-nya ke link web Gmail
                     emailLink.href = gmailWebLink;
                 }
-                // Jika INI mobile, kita tidak melakukan apa-apa,
-                // dan link-nya akan tetap "mailto:..." (sesuai HTML)
             }
+
+            // --- TAMBAHAN: Inisialisasi AOS ---
+            // Dijalankan setelah semua elemen DOM siap
+            AOS.init({
+                duration: 800, // Waktu default animasi (800ms)
+                easing: 'ease-out', // Jenis easing
+                once: true, // Animasi hanya berjalan sekali
+                offset: 50 // Jarak dalam px dari bagian bawah jendela sebelum memulai animasi
+            });
+            // ---------------------------------
         });
     </script>
 
