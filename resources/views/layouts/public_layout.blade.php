@@ -146,7 +146,7 @@
         </main>
 
         {{-- Footer Anda (Tidak diubah, sudah benar) --}}
-        <footer class="bg-gray-900 text-gray-300 {{ Request::is('/') ? 'mt-0' : 'mt-12' }}">
+        <footer class="bg-gray-900 text-gray-300 {{ Request::is('/') ? 'mt-0' : 'mt-6' }}">
             {{-- ... Konten footer lengkap Anda ... --}}
             <div class="container mx-auto px-6 py-10">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
