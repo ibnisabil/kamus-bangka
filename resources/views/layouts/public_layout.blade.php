@@ -17,17 +17,18 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { 'serif': ['"Playfair Display"', 'serif'], 'sans': ['Poppins', 'sans-serif'], }
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'sans': ['Poppins', 'sans-serif'],
+                    }
                 }
             }
         }
     </script>
 
     <style>
-        /* ... */
         html, body {
             width: 100%;
-            /* HAPUS 'overflow-x: hidden;' DARI SINI */
         }
         body {
             font-family: 'Poppins', sans-serif;
@@ -105,40 +106,40 @@
         {{-- FIX 3: Mengubah z-index dari z-50 menjadi z-30 --}}
         {{-- ========================================================= --}}
         <header id="main-header" class="sticky top-0 z-30">
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-        {{-- Penambahan 'items-center' sudah benar. Fokus pada penyelarasan logo-logo di dalamnya. --}}
-        <a href="{{ route('beranda') }}" class="flex items-center gap-3">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                {{-- Penambahan 'items-center' sudah benar. Fokus pada penyelarasan logo-logo di dalamnya. --}}
+                <a href="{{ route('beranda') }}" class="flex items-center gap-3">
 
-            {{-- Logo Kota (h-12) --}}
-            <div class="logo-wrapper flex items-center h-12">
-                <img src="{{ asset('images/logo_kota.png') }}" alt="Logo Kota Pangkalpinang Berwarna" class="logo-color h-12 w-12 object-contain">
-                <img src="{{ asset('images/logo_kota-white.png') }}" alt="Logo Kota Pangkalpinang Putih" class="logo-white h-12 w-12 object-contain">
-            </div>
+                    {{-- Logo Kota (h-12) --}}
+                    <div class="logo-wrapper flex items-center h-12">
+                        <img src="{{ asset('images/logo_kota.png') }}" alt="Logo Kota Pangkalpinang Berwarna" class="logo-color h-12 w-12 object-contain">
+                        <img src="{{ asset('images/logo_kota-white.png') }}" alt="Logo Kota Pangkalpinang Putih" class="logo-white h-12 w-12 object-contain">
+                    </div>
 
-            {{-- Logo Dispar (h-10) - Dibuat flex dan tingginya disamakan dengan Logo Kota (h-12) agar penempatan vertikalnya sesuai --}}
-            <div class="logo-wrapper flex items-center h-12">
-                {{-- Logo Dispar yang sebenarnya hanya h-10 akan otomatis terpusat di dalam div h-12 ini --}}
-                <img src="{{ asset('images/LOGO-DISPAR.png') }}" alt="Logo Dispar Berwarna" class="logo-color h-10 object-contain">
-                <img src="{{ asset('images/logo-dispar-white.png') }}" alt="Logo Dispar Putih" class="logo-white h-10 object-contain">
-            </div>
+                    {{-- Logo Dispar (h-10) - Dibuat flex dan tingginya disamakan dengan Logo Kota (h-12) agar penempatan vertikalnya sesuai --}}
+                    <div class="logo-wrapper flex items-center h-12">
+                        {{-- Logo Dispar yang sebenarnya hanya h-10 akan otomatis terpusat di dalam div h-12 ini --}}
+                        <img src="{{ asset('images/LOGO-DISPAR.png') }}" alt="Logo Dispar Berwarna" class="logo-color h-10 object-contain">
+                        <img src="{{ asset('images/logo-dispar-white.png') }}" alt="Logo Dispar Putih" class="logo-white h-10 object-contain">
+                    </div>
 
-            <span class="text-2xl font-bold">
-                <span class="title-kamus text-white">Kamus</span>
-                <span class="title-bangka text-white">Bangka</span>
-            </span>
-        </a>
-        <div class="hidden md:flex items-center gap-2">
-            <a href="{{ route('beranda') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Beranda</a>
-            <a href="{{ route('tentang') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Tentang</a>
-            <a href="{{ route('kontak.lengkap') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Kontak Kami</a>
-        </div>
-        <div class="md:hidden">
-            <button id="mobile-menu-button" class="text-white focus:outline-none p-2 rounded-md hover:bg-white/10 transition-colors [.header-scrolled_&]:text-gray-900">
-                <i class="fa-solid fa-bars fa-lg"></i>
-            </button>
-        </div>
-    </nav>
-</header>
+                    <span class="text-2xl font-bold">
+                        <span class="title-kamus text-white">Kamus</span>
+                        <span class="title-bangka text-white">Bangka</span>
+                    </span>
+                </a>
+                <div class="hidden md:flex items-center gap-2">
+                    <a href="{{ route('beranda') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Beranda</a>
+                    <a href="{{ route('tentang') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Tentang</a>
+                    <a href="{{ route('kontak.lengkap') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Kontak Kami</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none p-2 rounded-md hover:bg-white/10 transition-colors [.header-scrolled_&]:text-gray-900">
+                        <i class="fa-solid fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </nav>
+        </header>
 
         <main class="flex-grow">
             @yield('content')
@@ -153,30 +154,29 @@
                         <h3 class="font-bold text-lg text-white mb-4">Kontak</h3>
                         <ul class="space-y-3">
                             <li>
-    <div class="flex items-center gap-3 group">
-        {{-- MENGUBAH LINK DARI WA KE TENTANG --}}
-        <a href="{{ route('kontak.lengkap') }}">
-            <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
-                {{-- 🌟 IKON DIUBAH MENJADI USER --}}
-                <i class="fa-solid fa-user"></i>
-            </div>
-        </a>
-        {{-- 🌟 TEKS DIUBAH SESUAI PERMINTAAN --}}
-        <span class="group-hover:text-blue-400 transition-colors">Informasi Lengkap Kontak</span>
-    </div>
-</li>
-    <div class="flex items-center gap-3 group">
-        <a id="email-link"
-           href="mailto:tic.pangkalpinang@gmail.com"
-           target="_blank">
+                                <div class="flex items-center gap-3 group">
+                                    {{-- MENGUBAH LINK DARI WA KE TENTANG --}}
+                                    <a href="{{ route('kontak.lengkap') }}">
+                                        <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
+                                            {{-- 🌟 IKON DIUBAH MENJADI USER --}}
+                                            <i class="fa-solid fa-user"></i>
+                                        </div>
+                                    </a>
+                                    {{-- 🌟 TEKS DIUBAH SESUAI PERMINTAAN --}}
+                                    <span class="group-hover:text-blue-400 transition-colors">Informasi Lengkap Kontak</span>
+                                </div>
+                            </li>
+                            <div class="flex items-center gap-3 group">
+                                <a id="email-link"
+                                   href="mailto:tic.pangkalpinang@gmail.com"
+                                   target="_blank">
 
-            <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
-                <i class="fa-solid fa-envelope"></i>
-            </div>
-        </a>
-        <span class="group-hover:text-blue-400 transition-colors">tic.pangkalpinang@gmail.com</span>
-    </div>
-</li>
+                                    <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                </a>
+                                <span class="group-hover:text-blue-400 transition-colors">tic.pangkalpinang@gmail.com</span>
+                            </div>
                             <li>
                                 <div class="flex items-center gap-3 group">
                                     <a href="http://wonderful.pangkalpinangkota.go.id" target="_blank">
@@ -190,15 +190,15 @@
                         </ul>
                     </div>
                     <div>
-    <h3 class="font-bold text-lg text-white mb-4">Navigasi Cepat</h3>
-    <ul class="space-y-3">
-        <li>
-            <a href="{{ route('buku.digital') }}" class="hover:text-blue-400">
-                Buku Digital Bahasa Melayu Bangka Belitung
-            </a>
-        </li>
-    </ul>
-</div>
+                        <h3 class="font-bold text-lg text-white mb-4">Navigasi Cepat</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="{{ route('buku.digital') }}" class="hover:text-blue-400">
+                                    Buku Digital Bahasa Melayu Bangka Belitung
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="md:text-right">
                         <h3 class="font-bold text-lg text-white mb-4">Ikuti Kami</h3>
                         <div class="flex gap-4 md:justify-end">
@@ -212,16 +212,16 @@
             </div>
             <div class="border-t border-gray-700">
                 {{--
-                  FIX RESPONSIVE:
-                  - Mengubah 'flex' menjadi 'flex-col md:flex-row' agar menumpuk di mobile.
-                  - Menambah 'gap-4 md:gap-2' untuk memberi jarak saat menumpuk.
-                  - Mengubah 'justify-between' menjadi 'justify-center md:justify-between'
+                    FIX RESPONSIVE:
+                    - Mengubah 'flex' menjadi 'flex-col md:flex-row' agar menumpuk di mobile.
+                    - Menambah 'gap-4 md:gap-2' untuk memberi jarak saat menumpuk.
+                    - Mengubah 'justify-between' menjadi 'justify-center md:justify-between'
                 --}}
                 <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-center md:justify-between items-center text-sm gap-4 md:gap-2">
                     {{--
-                      FIX RESPONSIVE:
-                      - Menambah 'flex-col sm:flex-row' agar logo & teks bisa menumpuk di layar <sm.
-                      - Menambah 'text-center sm:text-left' untuk perataan teks.
+                        FIX RESPONSIVE:
+                        - Menambah 'flex-col sm:flex-row' agar logo & teks bisa menumpuk di layar <sm.
+                        - Menambah 'text-center sm:text-left' untuk perataan teks.
                     --}}
                     <div class="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
                         <img src="{{ asset('images/logo-dispar-white.png') }}" alt="Logo Dispar White" class="h-8 opacity-80">
@@ -235,9 +235,7 @@
 
     {{-- ========================================================= --}}
     {{-- FIX 3: Mengubah z-index dari z-50 menjadi z-40 --}}
-    {{-- =Access-Control-Allow-Credentials: true
-Access-Control-Allow-Origin: https://gemini.google.com
-    ========================================================= --}}
+    {{-- ========================================================= --}}
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
 
     {{-- ========================================================= --}}
