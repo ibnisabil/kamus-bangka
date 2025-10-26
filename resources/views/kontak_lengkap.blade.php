@@ -2,24 +2,22 @@
 
 @section('content')
 
-{{-- 🚀 WRAPPER UTAMA: BG BLACK (Mengontrol overflow dan penyesuaian header) --}}
+{{-- WRAPPER UTAMA: BG BLACK (Mengontrol overflow dan penyesuaian header) --}}
 <div class="bg-black min-h-screen pt-[96px] -mt-[96px] overflow-x-hidden">
 
-    {{-- 1. Bagian Hero Header --}}
+    {{-- 1. Hero Header --}}
     <div class="bg-black py-20 shadow-lg mb-8 border-b border-gray-800">
         <div class="container mx-auto px-6">
-            {{-- Font: Playfair Display Bold (font-serif) --}}
             <h1 class="text-3xl md:text-5xl font-bold text-white font-serif mb-2">Kontak Kami</h1>
             <p class="text-xl text-gray-400">Hubungi tim kami untuk pertanyaan, dukungan, atau kemitraan.</p>
         </div>
     </div>
 
-    {{-- Konten Utama (Informasi Staf dan Kontak Umum) --}}
-    {{-- pb-20 memastikan background hitam full sampai footer --}}
+    {{-- Konten Utama --}}
     <div class="container mx-auto px-6 py-4 pb-20">
 
-        {{-- 2. Judul Staf Penghubung (Font Disesuaikan) --}}
-        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-8 border-b border-indigo-500 inline-block pb-2 font-serif">
+        {{-- 2. Judul Staf Penghubung --}}
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-8 border-b-2 border-indigo-500 inline-block pb-2 font-serif">
             Staf Penghubung
         </h2>
 
@@ -82,45 +80,48 @@
 
         </div>
 
-        {{-- 3. Judul Kontak Institusi (Font Disesuaikan) --}}
-        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-8 pt-12 border-b-4 border-red-500 inline-block pb-2 font-serif">
+        {{-- 3. Judul Kontak Institusi --}}
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-8 pt-12 border-b-2 border-red-500 inline-block pb-2 font-serif">
             Kontak Institusi
         </h2>
 
-        {{-- Kontak Institusi (Rapi, Responsif, dan Animasi Hover) --}}
-        <div class="bg-gray-800 p-8 rounded-xl shadow-xl border-l-4 border-indigo-500 text-white 
+        {{-- Kontak Institusi Detail (Rapi, Responsif, dan Animasi Hover) --}}
+        <div class="bg-gray-800 p-8 rounded-xl shadow-xl border-l-4 border-indigo-500 text-white
             hover:shadow-2xl hover:shadow-indigo-500/50 transition duration-300 hover:-translate-y-1">
-            <h3 class="text-2xl font-semibold text-white mb-4">Dinas Pariwisata Kota Pangkalpinang</h3>
-            <div class="space-y-4 text-gray-300">
-                
-                {{-- FIX 1: TELEPON/WHATSAPP (Struktur Kolom Responsif) --}}
+
+            <h3 class="text-2xl font-semibold text-white mb-6">Dinas Pariwisata Kota Pangkalpinang</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+                {{-- Kontak Item: Telepon/WhatsApp --}}
                 <div class="flex items-start gap-3 text-lg">
-                    <i class="fa-solid fa-whatsapp text-indigo-400 w-5 mt-1 flex-shrink-0"></i> 
+                    <i class="fa-solid fa-whatsapp text-indigo-400 w-5 mt-1 flex-shrink-0"></i>
                     <div class="flex flex-col min-w-0">
-                        <span class="font-semibold text-white">Telepon/WhatsApp:</span> 
-                        <span class="break-all text-gray-300">0831-7917-4543</span>
+                        <span class="font-semibold text-white text-base">Telepon/WhatsApp:</span>
+                        <span class="break-all text-gray-300 text-base">0831-7917-4543</span>
                     </div>
                 </div>
-                
-                {{-- FIX 2: EMAIL (Struktur Kolom Responsif) --}}
+
+                {{-- Kontak Item: Email --}}
                 <div class="flex items-start gap-3 text-lg">
                     <i class="fa-solid fa-envelope text-indigo-400 w-5 mt-1 flex-shrink-0"></i>
                     <div class="flex flex-col min-w-0">
-                        <span class="font-semibold text-white">Email:</span>
-                        <span class="break-all text-gray-300">tic.pangkalpinang@gmail.com</span>
+                        <span class="font-semibold text-white text-base">Email:</span>
+                        <span class="break-all text-gray-300 text-base">tic.pangkalpinang@gmail.com</span>
                     </div>
                 </div>
-                
-                {{-- FIX 3: ALAMAT (Struktur Kolom Responsif) --}}
+
+                {{-- Kontak Item: Alamat --}}
                 <div class="flex items-start gap-3 text-lg">
                     <i class="fa-solid fa-location-dot text-indigo-400 w-5 mt-1 flex-shrink-0"></i>
                     <div class="flex flex-col min-w-0">
-                        <span class="font-semibold text-white">Alamat:</span>
-                        <span class="text-gray-300">
-                            [Alamat kantor Anda, misalnya: Jl. Jend. Sudirman No. 1, Pangkalpinang]
+                        <span class="font-semibold text-white text-base">Alamat:</span>
+                        <span class="text-gray-300 text-base">
+                            Jl. Jend. Sudirman No. 1, Pangkalpinang
                         </span>
                     </div>
                 </div>
+
             </div>
         </div>
 
