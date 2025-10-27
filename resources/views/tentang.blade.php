@@ -4,43 +4,41 @@
 
 {{-- SECTION 1: Hero dengan Background Gambar Laut --}}
 
-<section class="relative bg-gray-800 text-white -mt-[96px] min-h-screen flex items-center">
-<div class="absolute inset-0">
-<img src="{{ asset('images/tentang-bg-1.jpg') }}" alt="Deburan ombak di pantai Bangka" class="w-full h-full object-cover">
-<div class="absolute inset-0 bg-black opacity-60"></div>
-</div>
+{{-- SECTION 1: Hero dengan Background Gambar Laut --}}
 
-<div class="relative z-10 container mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full">
-        <div class="md:pr-8 mt-32">
-            {{-- AOS: Judul muncul dari bawah --}}
-            <h1 class="font-serif text-4xl md:text-5xl font-bold leading-tight" data-aos="fade-up">
-                Kamus Digital<br>Bahasa Bangka
-            </h1>
-
-            <div class="mt-6">
-                {{-- AOS: Paragraf pertama muncul dari bawah, delay 200ms --}}
-                <p class="mb-4" data-aos="fade-up" data-aos-delay="200">
-                    Kamus Digital Bahasa Bangka dibuat untuk melestarikan dan mempelajari bahasa Bangka. Ditujukan bagi masyarakat umum, pelajar, maupun peneliti agar warisan budaya daerah tetap hidup dan dikenal generasi mendatang.
-                </p>
-                {{-- AOS: Paragraf kedua muncul dari bawah, delay 400ms --}}
-                <p data-aos="fade-up" data-aos-delay="400">
-                    Kamus Digital Bahasa Bangka adalah sebuah sarana pembelajaran modern yang menghadirkan kosakata khas Bangka dalam format mudah diakses. Dengan adanya kamus ini, pengguna dapat memahami arti, padanan, dan penggunaan kata dalam kehidupan sehari-hari sekaligus memperkaya pengetahuan tentang budaya lokal.
-                </p>
-                {{-- AOS: Tombol muncul dari bawah, delay 600ms --}}
-                <a href="{{ route('beranda') }}" class="mt-8 inline-block border-2 border-white rounded-lg px-8 py-3 hover:bg-white hover:text-black transition duration-300 font-semibold" data-aos="fade-up" data-aos-delay="600">
-                    Mulai Jelajahi &rarr;
-                </a>
-            </div>
-        </div>
-        <div></div>
+<section class="relative bg-gray-800 text-white -mt-[96px] min-h-screen flex flex-col justify-center">
+    <div class="absolute inset-0">
+        <img src="{{ asset('images/tentang-bg-1.jpg') }}" alt="Deburan ombak di pantai Bangka" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
     </div>
-</div>
 
+    <div class="relative z-10 container mx-auto px-6 py-20"> {{-- Tambahkan padding vertikal --}}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-full">
+            <div class="md:pr-8 pt-24 pb-12"> {{-- Tambahkan padding atas untuk dorongan --}}
+                {{-- AOS: Judul muncul dari bawah --}}
+                <h1 class="font-serif text-4xl md:text-5xl font-bold leading-tight" data-aos="fade-up">
+                    Kamus Digital<br>Bahasa Bangka
+                </h1>
 
+                <div class="mt-6">
+                    {{-- AOS: Paragraf pertama muncul dari bawah, delay 200ms --}}
+                    <p class="mb-4" data-aos="fade-up" data-aos-delay="200">
+                        Kamus Digital Bahasa Bangka dibuat untuk melestarikan dan mempelajari bahasa Bangka. Ditujukan bagi masyarakat umum, pelajar, maupun peneliti agar warisan budaya daerah tetap hidup dan dikenal generasi mendatang.
+                    </p>
+                    {{-- AOS: Paragraf kedua muncul dari bawah, delay 400ms --}}
+                    <p data-aos="fade-up" data-aos-delay="400">
+                        Kamus Digital Bahasa Bangka adalah sebuah sarana pembelajaran modern yang menghadirkan kosakata khas Bangka dalam format mudah diakses. Dengan adanya kamus ini, pengguna dapat memahami arti, padanan, dan penggunaan kata dalam kehidupan sehari-hari sekaligus memperkaya pengetahuan tentang budaya lokal.
+                    </p>
+                    {{-- AOS: Tombol muncul dari bawah, delay 600ms --}}
+                    <a href="{{ route('beranda') }}" class="mt-8 inline-block border-2 border-white rounded-lg px-8 py-3 hover:bg-white hover:text-black transition duration-300 font-semibold" data-aos="fade-up" data-aos-delay="600">
+                        Mulai Jelajahi &rarr;
+                    </a>
+                </div>
+            </div>
+            <div></div>
+        </div>
+    </div>
 </section>
-
-<hr>
 
 {{-- SECTION 2: Tujuan Kami dengan Kartu (Carousel) --}}
 
