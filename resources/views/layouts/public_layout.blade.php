@@ -187,14 +187,26 @@
                         </ul>
                     </div>
                     <div class="md:text-right">
-                        <h3 class="font-bold text-lg text-white mb-4">Ikuti Kami</h3>
-                        <div class="flex gap-4 md:justify-end">
-                            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"><i class="fa-brands fa-tiktok"></i></a>
-                            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"><i class="fa-brands fa-youtube"></i></a>
-                        </div>
-                    </div>
+    <h3 class="font-bold text-lg text-white mb-4">Ikuti Kami</h3>
+    <div class="flex gap-4 md:justify-end">
+        {{-- Instagram --}}
+        <a href="https://www.instagram.com/dispar_pgk" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        {{-- TikTok --}}
+        <a href="https://www.tiktok.com/@dispar_pgk" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+        {{-- Facebook --}}
+        <a href="https://www.facebook.com/share/1Ci47KvCpn/" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        {{-- YouTube --}}
+        <a href="https://youtube.com/@wonderfulpangkalpinang244" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+    </div>
+</div>
                 </div>
             </div>
             <div class="border-t border-gray-700">
