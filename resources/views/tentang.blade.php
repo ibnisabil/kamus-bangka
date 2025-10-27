@@ -95,7 +95,7 @@
                              data-title="Kekayaan Dialek Lokal"
                              data-image="{{ asset('images/dialek-lokal.png') }}"
                              data-description="Bahasa Bangka memiliki kekayaan dialek yang berbeda antar wilayah. Kami berkomitmen mendokumentasikan setiap variasi leksikal dan fonetik yang ada, memastikan kamus ini mewakili spektrum penuh kekayaan linguistik daerah, menjadikannya sumber rujukan yang komprehensif.">
-                             
+
                              {{-- PERUBAHAN: Menambahkan efek hover:shadow-2xl, hover:shadow-blue-400/50, dan hover:-translate-y-2 --}}
                              <div class="bg-black/30 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/10 h-full flex flex-col hover:border-blue-400 transition duration-300 hover:shadow-2xl hover:shadow-blue-400/50 hover:-translate-y-2">
                                  <img src="{{ asset('images/dialek-lokal.png') }}" alt="Warisan budaya Bangka" class="w-full h-64 object-cover flex-shrink-0">
@@ -113,7 +113,7 @@
                              data-title="Modul Pembelajaran"
                              data-image="{{ asset('images/Pembelajaran.png') }}"
                              data-description="Kami menyajikan setiap entri kata dengan contoh kalimat kontekstual yang relevan. Modul ini dirancang untuk memfasilitasi penguasaan bahasa secara praktis, membantu pengguna memahami tidak hanya arti leksikal, tetapi juga cara penggunaan kata dalam percakapan sehari-hari. Kamus ini menjadi alat bantu efektif bagi pelajar dan siapa pun yang ingin menguasai Bahasa Bangka.">
-                             
+
                              {{-- PERUBAHAN: Menambahkan efek hover:shadow-2xl, hover:shadow-blue-400/50, dan hover:-translate-y-2 --}}
                              <div class="bg-black/30 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/10 h-full flex flex-col hover:border-blue-400 transition duration-300 hover:shadow-2xl hover:shadow-blue-400/50 hover:-translate-y-2">
                                  <img src="{{ asset('images/Pembelajaran.png') }}" alt="Penelitian dan data" class="w-full h-64 object-cover flex-shrink-0">
@@ -131,7 +131,7 @@
                              data-title="Sumber Daya Riset"
                              data-image="{{ asset('images/sumberdaya.png') }}"
                              data-description="Kami menyajikan data bahasa secara terstruktur dan teruji untuk mendukung studi akademis, linguistik, dan etnografi. Kamus digital ini berfungsi sebagai fondasi yang kuat bagi mahasiswa, dosen, dan peneliti yang memerlukan rujukan autentik tentang Bahasa Bangka.">
-                             
+
                              {{-- PERUBAHAN: Menambahkan efek hover:shadow-2xl, hover:shadow-blue-400/50, dan hover:-translate-y-2 --}}
                              <div class="bg-black/30 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/10 h-full flex flex-col hover:border-blue-400 transition duration-300 hover:shadow-2xl hover:shadow-blue-400/50 hover:-translate-y-2">
                                  <img src="{{ asset('images/sumberdaya.png') }}" alt="Orang-orang berkumpul" class="w-full h-64 object-cover flex-shrink-0">
@@ -149,7 +149,7 @@
                              data-title="Platform Kolaborasi"
                              data-image="{{ asset('images/kolaborasi.png') }}"
                              data-description="Kamus ini dibangun di atas semangat kolaboratif. Kami membuka saluran digital yang mudah bagi penutur asli, budayawan, dan masyarakat umum untuk berkontribusi, mengajukan entri baru, dan memberikan masukan kontekstual, memastikan kamus ini terus hidup dan relevan melalui partisipasi aktif.">
-                             
+
                              {{-- PERUBAHAN: Menambahkan efek hover:shadow-2xl, hover:shadow-blue-400/50, dan hover:-translate-y-2 --}}
                              <div class="bg-black/30 backdrop-blur-md rounded-xl overflow-hidden shadow-lg border border-white/10 h-full flex flex-col hover:border-blue-400 transition duration-300 hover:shadow-2xl hover:shadow-blue-400/50 hover:-translate-y-2">
                                  <img src="{{ asset('images/kolaborasi.png') }}" alt="Ponsel dan laptop" class="w-full h-64 object-cover flex-shrink-0">
@@ -193,11 +193,17 @@
 </div>
 
 <div class="relative z-10 container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-    {{-- YouTube Embed --}}
-    {{-- AOS: Video muncul dari kiri --}}
-    <div class="rounded-xl overflow-hidden shadow-2xl" data-aos="fade-right" data-aos-delay="100">
-        <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+    {{-- YouTube Embed: Tambahkan Z-index dan latar belakang putih/gray jika background section mengganggu --}}
+        <div class="rounded-xl overflow-hidden shadow-2xl bg-white p-4" data-aos="fade-right" data-aos-delay="100" style="z-index: 20;">
+             {{-- Video YouTube Anda di sini --}}
+            <iframe class="w-full aspect-video"
+                    src="https://www.youtube.com/embed/AeQ7QibRF_8"
+                    title="Kata Sifat dalam Bahasa Bangka"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
 
     {{-- Text Content --}}
     <div class="text-gray-800">
@@ -214,9 +220,9 @@
             Selain versi digital, tersedia juga buku dalam bentuk <strong class="text-black">file PDF</strong> yang bisa dibaca langsung atau diunduh, sehingga dapat dipelajari kapan saja bahkan tanpa koneksi internet.
         </p>
         {{-- AOS: Tombol muncul dari kanan --}}
-        <a href="#" class="inline-block border-2 border-gray-800 text-gray-800 rounded-lg px-8 py-3 hover:bg-gray-800 hover:text-white transition duration-300 font-semibold" data-aos="fade-left" data-aos-delay="800">
-            Selengkapnya &rarr;
-        </a>
+        <a href="{{ route('buku.digital') }}" class="inline-block border-2 border-gray-800 text-gray-800 rounded-lg px-8 py-3 hover:bg-gray-800 hover:text-white transition duration-300 font-semibold" data-aos="fade-left" data-aos-delay="800">
+            Selengkapnya &rarr;
+        </a>
     </div>
 </div>
 
