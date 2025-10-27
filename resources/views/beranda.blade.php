@@ -5,7 +5,7 @@
 <div class="relative -mt-[96px]">
     {{-- Background Video and Overlay --}}
     <video src="{{ asset('videos/background-video.mp4') }}" autoplay loop muted playsinline class="absolute z-0 w-full h-full object-cover"></video>
-    <div class="absolute z-10 w-full h-full bg-black opacity-50"></div>
+    <div class="absolute z-10 w-full h-full bg-black opacity-30"></div>
 
     {{-- Main Content Container --}}
     <div class="relative z-20 container mx-auto px-6 pt-[96px] pb-16 min-h-screen">
@@ -15,13 +15,13 @@
 
             <div class="space-y-1 mb-12">
                 {{-- Headings --}}
-                <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight font-serif">
+                <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight font-serif">
                     Selamat Datang
                 </h1>
-                <h2 class="text-4xl md:text-5xl font-bold text-white font-serif">
+                <h2 class="text-5xl md:text-6xl font-bold text-white font-serif">
                     di <span class="bg-gradient-to-r from-blue-400 to-red-400 text-transparent bg-clip-text">KABAKA</span>
                 </h2>
-                <h2 class="text-4xl md:text-5xl font-bold text-white font-serif">
+                <h2 class="text-5xl md:text-6xl font-bold text-white font-serif">
                     Kamus Bahasa Bangka
                 </h2>
 
@@ -42,12 +42,14 @@
                     </h2>
                     <p class="text-white mt-2">
                         Mari mulai mencari kata padanan
-                        <span class="text-blue-400"><strong>Bahasa Indonesia</strong></span>
+                        {{-- **START PERBAIKAN DI SINI** --}}
+                        <span class="text-white"><strong>Bahasa Indonesia</strong></span>
 
-                        {{-- Exchange Icon with Animation --}}
-                        <i class="fa-solid fa-exchange-alt text-yellow-500 transition duration-300 hover:rotate-180 hover:text-yellow-300 cursor-pointer"></i>
+                        {{-- Exchange Icon with Animation (Ganti text-yellow-500 jadi text-white) --}}
+                        <i class="fa-solid fa-exchange-alt text-white transition duration-300 hover:rotate-180 hover:text-gray-300 cursor-pointer"></i>
 
-                        <span class="text-red-400"><strong>Bahasa Bangka</strong></span>
+                        <span class="text-white"><strong>Bahasa Bangka</strong></span>
+                        {{-- **END PERBAIKAN DI SINI** --}}
                     </p>
                 </div>
 
@@ -73,7 +75,7 @@
                         </select>
 
                         {{-- Search Button --}}
-                        <button type="button" id="search-button" class="w-full bg-blue-600 text-white rounded-lg px-4 py-3 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-black/50 transition duration-300 font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl active:scale-98">
+                        <button type="button" id="search-button" class="w-full bg-blue-600 text-white rounded-lg px-4 py-3 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-black/50 transition duration-300 font-semibold flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl hover:-translate-y-1 relative active:scale-98">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <span class="hidden md:inline">Cari</span>
                         </button>
