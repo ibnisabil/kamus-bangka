@@ -242,9 +242,9 @@
                 Selain versi digital, tersedia juga buku dalam bentuk <strong class="text-black">file PDF</strong> yang bisa dibaca langsung atau diunduh, sehingga dapat dipelajari kapan saja bahkan tanpa koneksi internet.
             </p>
             {{-- AOS: Tombol muncul dari kanan --}}
-            <a href="{{ route('buku.digital') }}" class="inline-block border-2 border-gray-800 text-gray-800 rounded-lg px-8 py-3 hover:bg-gray-800 hover:text-white transition duration-300 font-semibold" data-aos="fade-left" data-aos-delay="800">
-                Selengkapnya →
-            </a>
+            <a href="{{ route('buku.digital') }}" target="_blank" class="inline-block border-2 border-gray-800 text-gray-800 rounded-lg px-8 py-3 hover:bg-gray-800 hover:text-white transition duration-300 font-semibold" data-aos="fade-left" data-aos-delay="800">
+    Selengkapnya →
+</a>
         </div>
     </div>
 </section>
