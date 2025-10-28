@@ -5,25 +5,25 @@
 <div class="relative -mt-[96px]">
     {{-- Background Video and Overlay --}}
     <video src="{{ asset('videos/background-video.mp4') }}" autoplay loop muted playsinline class="absolute z-0 w-full h-full object-cover"></video>
-    <div class="absolute z-10 w-full h-full bg-black opacity-30"></div>
+    <div class="absolute z-10 w-full h-full bg-black opacity-60"></div>
 
     {{-- Main Content Container --}}
-    <div class="relative z-20 container mx-auto px-6 pt-[96px] pb-16 min-h-screen">
+    <div class="relative z-20 container mx-auto px-6 pt-[96px] pb-16 min-h-screen flex flex-col items-center justify-start">
 
         {{-- Hero Section (Title and Description) --}}
         <section class="max-w-3xl mx-auto text-center pt-8 md:pt-12">
 
             <div class="space-y-1 mb-12">
                 {{-- Headings --}}
-                <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight font-serif">
-                    Selamat Datang
-                </h1>
-                <h2 class="text-5xl md:text-6xl font-bold text-white font-serif">
-                    di <span class="bg-gradient-to-r from-blue-400 to-red-400 text-transparent bg-clip-text">KABAKA</span>
-                </h2>
-                <h2 class="text-5xl md:text-6xl font-bold text-white font-serif">
-                    Kamus Bahasa Bangka
-                </h2>
+                <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight font-serif text-shadow-lg">
+    Selamat Datang
+</h1>
+<h2 class="text-5xl md:text-6xl font-bold text-white font-serif text-shadow-lg">
+    di <span class="text-blue-400">KABAKA</span>
+</h2>
+<h2 class="text-5xl md:text-6xl font-bold text-white font-serif text-shadow-lg">
+    Kamus Bahasa Bangka
+</h2>
 
                 {{-- Description --}}
                 <p class="text-white/100 text-md md:text-lg max-w-2xl mx-auto mt-6">
@@ -32,7 +32,7 @@
             </div>
 
             {{-- Search Card --}}
-            <div class="bg-black/50 backdrop-blur-md rounded-3xl shadow-2xl p-4 md:p-6">
+            <div class="bg-gray-900/80 backdrop-blur-md rounded-3xl shadow-2xl p-4 md:p-6">
 
                 {{-- Search Card Header --}}
                 <div class="text-center mb-6">
@@ -269,6 +269,9 @@
     }
     .animate-fade-in {
         animation: fadeIn 0.4s ease-out forwards;
+    }
+    .text-shadow-lg {
+        text-shadow: 0px 1px 6px rgba(0, 0, 0, 0.8);
     }
     /* Scrollbar styling for better look on dark background */
     #search-results-container::-webkit-scrollbar {
