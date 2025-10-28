@@ -14,11 +14,6 @@ Route::get('/buku-digital', function () {
     return view('buku_digital');
 })->name('buku.digital');
 
-// 🚀 Rute Baru untuk Informasi Kontak Lengkap
-Route::get('/kontak-lengkap', function () {
-    return view('kontak_lengkap');
-})->name('kontak.lengkap');
-
 // BARU: Rute khusus untuk Live Search (API Endpoint)
 Route::get('/search-live', [PublicController::class, 'searchLive'])->name('search.live');
 

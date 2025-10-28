@@ -122,7 +122,7 @@
                 <div class="hidden md:flex items-center gap-2">
                     <a href="{{ route('beranda') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Beranda</a>
                     <a href="{{ route('tentang') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Tentang</a>
-                    <a href="{{ route('kontak.lengkap') }}" class="menu-link text-white hover:text-blue-300 px-3 py-2 font-medium">Kontak Kami</a>
+                    {{-- HAPUS: Link Kontak Kami (header desktop) --}}
                 </div>
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-white focus:outline-none p-2 rounded-md hover:bg-white/10 transition-colors [.header-scrolled_&]:text-gray-900">
@@ -143,20 +143,11 @@
                     <div>
                         <h3 class="font-bold text-lg text-white mb-4">Kontak</h3>
                         <ul class="space-y-3">
-                            <li>
-                                <div class="flex items-center gap-3 group">
-                                    <a href="{{ route('kontak.lengkap') }}">
-                                        <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
-                                            <i class="fa-solid fa-user"></i>
-                                        </div>
-                                    </a>
-                                    <span class="group-hover:text-blue-400 transition-colors">Informasi Lengkap Kontak</span>
-                                </div>
-                            </li>
+                            {{-- HAPUS: Item "Informasi Lengkap Kontak" --}}
                             <div class="flex items-center gap-3 group">
                                 <a id="email-link"
-                                   href="mailto:tic.pangkalpinang@gmail.com"
-                                   target="_blank">
+                                    href="mailto:tic.pangkalpinang@gmail.com"
+                                    target="_blank">
 
                                     <div class="w-10 h-10 bg-white/10 rounded-full flex-shrink-0 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
                                         <i class="fa-solid fa-envelope"></i>
@@ -187,26 +178,26 @@
                         </ul>
                     </div>
                     <div class="md:text-right">
-    <h3 class="font-bold text-lg text-white mb-4">Ikuti Kami</h3>
-    <div class="flex gap-4 md:justify-end">
-        {{-- Instagram --}}
-        <a href="https://www.instagram.com/dispar_pgk" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-        {{-- TikTok --}}
-        <a href="https://www.tiktok.com/@dispar_pgk" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
-            <i class="fa-brands fa-tiktok"></i>
-        </a>
-        {{-- Facebook --}}
-        <a href="https://www.facebook.com/share/1Ci47KvCpn/" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
-            <i class="fa-brands fa-facebook"></i>
-        </a>
-        {{-- YouTube --}}
-        <a href="https://youtube.com/@wonderfulpangkalpinang244" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
-            <i class="fa-brands fa-youtube"></i>
-        </a>
-    </div>
-</div>
+                        <h3 class="font-bold text-lg text-white mb-4">Ikuti Kami</h3>
+                        <div class="flex gap-4 md:justify-end">
+                            {{-- Instagram --}}
+                            <a href="https://www.instagram.com/dispar_pgk" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            {{-- TikTok --}}
+                            <a href="https://www.tiktok.com/@dispar_pgk" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                                <i class="fa-brands fa-tiktok"></i>
+                            </a>
+                            {{-- Facebook --}}
+                            <a href="https://www.facebook.com/share/1Ci47KvCpn/" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            {{-- YouTube --}}
+                            <a href="https://youtube.com/@wonderfulpangkalpinang244" target="_blank" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="border-t border-gray-700">
@@ -231,7 +222,7 @@
         <div class="flex flex-col mt-4">
             <a href="{{ route('beranda') }}" class="block py-3 px-4 hover:bg-gray-800">Beranda</a>
             <a href="{{ route('tentang') }}" class="block py-3 px-4 hover:bg-gray-800">Tentang</a>
-            <a href="{{ route('kontak.lengkap') }}" class="block py-3 px-4 hover:bg-gray-800">Kontak Kami</a>
+            {{-- HAPUS: Link Kontak Kami (Mobile Menu) --}}
         </div>
     </div>
 
