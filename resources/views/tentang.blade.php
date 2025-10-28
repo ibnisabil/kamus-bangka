@@ -182,49 +182,71 @@
 
 <hr>
 
-{{-- SECTION 3: Buku Kamus PDF dengan Video YouTube --}}
+{{-- SECTION 3: Buku Kamus PDF dengan Video YouTube dan Maps --}}
 
 <section class="relative py-20 md:py-24">
-<div class="absolute inset-0">
-{{-- Menambahkan gambar latar belakang --}}
-<img src="{{ asset('images/tentang-bg-3.jpg') }}" alt="Background abstrak gelap" class="w-full h-full object-cover">
-</div>
+    <div class="absolute inset-0">
+        {{-- Menambahkan gambar latar belakang --}}
+        <img src="{{ asset('images/tentang-bg-3.jpg') }}" alt="Background abstrak gelap" class="w-full h-full object-cover">
+    </div>
 
-<div class="relative z-10 container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-    {{-- YouTube Embed: Tambahkan Z-index dan latar belakang putih/gray jika background section mengganggu --}}
-        <div class="rounded-xl overflow-hidden shadow-2xl bg-white p-4" data-aos="fade-right" data-aos-delay="100" style="z-index: 20;">
-             {{-- Video YouTube Anda di sini --}}
-            <iframe class="w-full aspect-video"
-                    src="https://www.youtube.com/embed/AeQ7QibRF_8"
-                    title="Kata Sifat dalam Bahasa Bangka"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-            </iframe>
+    <div class="relative z-10 container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+        {{-- KOLOM KIRI: Video dan Maps (Dibungkus dalam satu div untuk jarak) --}}
+        <div class="space-y-12">
+
+            {{-- 1. YouTube Embed --}}
+            <div class="rounded-xl overflow-hidden shadow-2xl bg-white p-4" data-aos="fade-right" data-aos-delay="100" style="z-index: 20;">
+                <iframe class="w-full aspect-video"
+                        src="https://www.youtube.com/embed/AeQ7QibRF_8"
+                        title="Kata Sifat dalam Bahasa Bangka"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+            {{-- 2. Google Maps Embed BARU --}}
+            <div class="rounded-xl overflow-hidden shadow-2xl bg-white p-4" data-aos="fade-right" data-aos-delay="300" style="z-index: 20;">
+                <h3 class="font-serif text-xl md:text-2xl font-bold text-gray-800 mb-4">Lokasi Kantor Kami</h3>
+                <div class="relative w-full overflow-hidden rounded-lg" style="padding-bottom: 75%;">
+                    <iframe
+                        {{-- URL EMBED ASLI GOOGLE MAPS DINAS PARIWISATA PKP --}}
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.0273302512965!2d106.1163734!3d-2.143214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e22c72928310947%3A0x726866b128aafd50!2sDinas%20Pariwisata%20Kota%20Pangkalpinang!5e0!3m2!1sid!2sid!4v1761619357075!5m2!1sid!2sid"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="absolute top-0 left-0 w-full h-full"
+                    ></iframe>
+                </div>
+                <p class="text-sm text-gray-600 mt-3 text-center">Dinas Pariwisata Kota Pangkalpinang</p>
+            </div>
+
         </div>
 
-    {{-- Text Content --}}
-    <div class="text-gray-800">
-        {{-- AOS: Judul muncul dari kanan --}}
-        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4" data-aos="fade-left" data-aos-delay="200">
-            Buku Kamus<br>
-            Bangka Belitung
-        </h2>
-        {{-- AOS: Paragraf muncul dari kanan --}}
-        <p class="mb-4 text-gray-700" data-aos="fade-left" data-aos-delay="400">
-            Temukan kosakata khas Bahasa Melayu Bangka Belitung yang telah disusun secara digital. Portal ini menyediakan akses cepat untuk memahami arti, padanan, dan penggunaan kata dalam keseharian masyarakat Bangka.
-        </p>
-        <p class="mb-6 text-gray-700" data-aos="fade-left" data-aos-delay="600">
-            Selain versi digital, tersedia juga buku dalam bentuk <strong class="text-black">file PDF</strong> yang bisa dibaca langsung atau diunduh, sehingga dapat dipelajari kapan saja bahkan tanpa koneksi internet.
-        </p>
-        {{-- AOS: Tombol muncul dari kanan --}}
-        <a href="{{ route('buku.digital') }}" class="inline-block border-2 border-gray-800 text-gray-800 rounded-lg px-8 py-3 hover:bg-gray-800 hover:text-white transition duration-300 font-semibold" data-aos="fade-left" data-aos-delay="800">
-            Selengkapnya &rarr;
-        </a>
+        {{-- KOLOM KANAN: Text Content --}}
+        <div class="text-gray-800">
+            {{-- AOS: Judul muncul dari kanan --}}
+            <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4" data-aos="fade-left" data-aos-delay="200">
+                Buku Kamus<br>
+                Bangka Belitung
+            </h2>
+            {{-- AOS: Paragraf muncul dari kanan --}}
+            <p class="mb-4 text-gray-700" data-aos="fade-left" data-aos-delay="400">
+                Temukan kosakata khas Bahasa Melayu Bangka Belitung yang telah disusun secara digital. Portal ini menyediakan akses cepat untuk memahami arti, padanan, dan penggunaan kata dalam keseharian masyarakat Bangka.
+            </p>
+            <p class="mb-6 text-gray-700" data-aos="fade-left" data-aos-delay="600">
+                Selain versi digital, tersedia juga buku dalam bentuk <strong class="text-black">file PDF</strong> yang bisa dibaca langsung atau diunduh, sehingga dapat dipelajari kapan saja bahkan tanpa koneksi internet.
+            </p>
+            {{-- AOS: Tombol muncul dari kanan --}}
+            <a href="{{ route('buku.digital') }}" class="inline-block border-2 border-gray-800 text-gray-800 rounded-lg px-8 py-3 hover:bg-gray-800 hover:text-white transition duration-300 font-semibold" data-aos="fade-left" data-aos-delay="800">
+                Selengkapnya →
+            </a>
+        </div>
     </div>
-</div>
-
-
 </section>
 
 {{-- MODAL POP-UP (Perbaikan Responsivitas Mobile & Ukuran Modern) --}}
