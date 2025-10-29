@@ -5,7 +5,7 @@
 <div class="relative -mt-[96px]">
     {{-- Background Video and Overlay --}}
     <video src="{{ asset('videos/background-video.mp4') }}" autoplay loop muted playsinline class="absolute z-0 w-full h-full object-cover"></video>
-    <div class="absolute z-10 w-full h-full bg-black opacity-60"></div>
+    <div class="absolute z-10 w-full h-full bg-black opacity-40"></div>
 
     {{-- Main Content Container (Dipertahankan justify-start) --}}
     <div class="relative z-20 container mx-auto px-6 pt-[96px] pb-16 min-h-screen flex flex-col items-center justify-start">
