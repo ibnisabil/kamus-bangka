@@ -7,13 +7,13 @@
     <video src="{{ asset('videos/background-video.mp4') }}" autoplay loop muted playsinline class="absolute z-0 w-full h-full object-cover"></video>
     <div class="absolute z-10 w-full h-full bg-black opacity-60"></div>
 
-    {{-- Main Content Container --}}
+    {{-- Main Content Container (Dipertahankan justify-start) --}}
     <div class="relative z-20 container mx-auto px-6 pt-[96px] pb-16 min-h-screen flex flex-col items-center justify-start">
 
         {{-- Hero Section (Title and Description) --}}
         <section class="max-w-3xl mx-auto text-center pt-8 md:pt-12">
 
-            <div class="space-y-1 mb-12">
+            <div class="space-y-1 mb-20">
                 {{-- Headings --}}
                 <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight font-serif text-shadow-lg">
     Selamat Datang
@@ -26,52 +26,37 @@
 </h2>
 
                 {{-- Description --}}
-                <p class="text-white/100 text-md md:text-lg max-w-2xl mx-auto mt-6">
-                    Temukan, pelajari, dan lestarikan bahasa Bangka dengan mudah.
+                <p class="text-white/100 text-md md:text-lg max-w-2xl mx-auto mt-6 mb-8">
+                    Cari dan temukan <span class="text-white">Bahasa Indonesia</span> <i class="fa-solid fa-arrow-right-arrow-left mx-1"></i> <span class="text-white">Bahasa Bangka</span> dengan mudah, sehingga anda dapat mempelajari dan melestarikannya.
                 </p>
             </div>
 
-            {{-- Search Card --}}
-            <div class="bg-gray-900/80 backdrop-blur-md rounded-3xl shadow-2xl p-4 md:p-6">
-
+            {{-- Search Card DIBUAT MINIMALIS --}}
+            <div class="w-full">
                 {{-- Search Card Header --}}
                 <div class="text-center mb-6">
-                    <h2 class="text-white text-2xl font-bold flex items-center justify-center gap-3">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <span>Cari Kata</span>
-                    </h2>
-                    <p class="text-white mt-2">
-                        Mari mulai mencari kata padanan
-                        {{-- **START PERBAIKAN DI SINI** --}}
-                        <span class="text-white"><strong>Bahasa Indonesia</strong></span>
-
-                        {{-- Exchange Icon with Animation (Ganti text-yellow-500 jadi text-white) --}}
-                        <i class="fa-solid fa-exchange-alt text-white transition duration-300 hover:rotate-180 hover:text-gray-300 cursor-pointer"></i>
-
-                        <span class="text-white"><strong>Bahasa Bangka</strong></span>
-                        {{-- **END PERBAIKAN DI SINI** --}}
-                    </p>
+                    {{-- IKON DAN TEKS "Cari Kata" DIHAPUS DARI SINI --}}
                 </div>
 
                 {{-- Search Inputs & Button --}}
-                <div class="space-y-4">
+                <div class="space-y-4 max-w-2xl mx-auto">
                     <div class="grid grid-cols-1 md:grid-cols-[2fr,2fr,1fr] gap-4">
                         {{-- Search Input --}}
                         <input
                             type="text"
                             id="search-input"
-                            class="w-full px-4 py-3 bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent rounded-lg border border-white/20 transition duration-300"
+                            class="w-full px-4 py-3 bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent rounded-lg border border-gray-300 transition duration-300 shadow-md"
                             placeholder="Ketik kata yang dicari..."
                             autocomplete="off">
 
                         {{-- Dialect Select --}}
-                        <select id="dialek-select" class="w-full px-4 py-3 bg-white/10 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent rounded-lg border border-white/20 transition duration-300">
-                            <option class="bg-gray-700 text-white" value="semua">Semua Dialek</option>
-                            <option class="bg-gray-700 text-white" value="Bangka Barat">Bangka Barat</option>
-                            <option class="bg-gray-700 text-white" value="Bangka Induk">Bangka Induk</option>
-                            <option class="bg-gray-700 text-white" value="Bangka Selatan">Bangka Selatan</option>
-                            <option class="bg-gray-700 text-white" value="Bangka Tengah">Bangka Tengah</option>
-                            <option class="bg-gray-700 text-white" value="Pangkalpinang">Pangkalpinang</option>
+                        <select id="dialek-select" class="w-full px-4 py-3 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent rounded-lg border border-gray-300 transition duration-300 shadow-md">
+                            <option class="bg-white text-gray-800" value="semua">Semua Dialek</option>
+                            <option class="bg-white text-gray-800" value="Bangka Barat">Bangka Barat</option>
+                            <option class="bg-white text-gray-800" value="Bangka Induk">Bangka Induk</option>
+                            <option class="bg-white text-gray-800" value="Bangka Selatan">Bangka Selatan</option>
+                            <option class="bg-white text-gray-800" value="Bangka Tengah">Bangka Tengah</option>
+                            <option class="bg-white text-gray-800" value="Pangkalpinang">Pangkalpinang</option>
                         </select>
 
                         {{-- Search Button --}}
@@ -83,13 +68,14 @@
                 </div>
 
                 {{-- Search Results Area --}}
-                <div class="w-full pt-8 text-left">
+                <div class="w-full pt-8 text-left max-w-3xl mx-auto">
                     <div id="result-count-container" class="mb-4 text-center"></div>
                     <div id="search-results-container" class="max-h-[50vh] overflow-y-auto pr-2 space-y-4">
                         {{-- Hasil akan dimuat di sini oleh JavaScript --}}
                     </div>
                 </div>
             </div>
+
         </section>
     </div>
 </div>
