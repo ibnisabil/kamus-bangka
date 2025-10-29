@@ -5,52 +5,47 @@
 <div class="relative -mt-[96px]">
     {{-- Background Video and Overlay --}}
     <video src="{{ asset('videos/background-video.mp4') }}" autoplay loop muted playsinline class="absolute z-0 w-full h-full object-cover"></video>
-    <div class="absolute z-10 w-full h-full bg-black opacity-40"></div>
+    <div class="absolute z-10 w-full h-full bg-black opacity-60"></div> {{-- Opacity sedikit dinaikkan untuk kontras lebih baik --}}
 
     {{-- Main Content Container (Dipertahankan justify-start) --}}
-    <div class="relative z-20 container mx-auto px-6 pt-[96px] pb-16 min-h-screen flex flex-col items-center justify-start">
+    <div class="relative z-20 container mx-auto px-6 pt-[120px] pb-[120px] min-h-screen flex flex-col items-center justify-center">
 
         {{-- Hero Section (Title and Description) --}}
-        <section class="max-w-3xl mx-auto text-center pt-8 md:pt-12">
+        <section class="max-w-4xl mx-auto text-center pt-8 md:pt-12">
 
-            <div class="space-y-1 mb-20">
+            <div class="space-y-1 mb-12">
                 {{-- Headings --}}
-                <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight font-serif text-shadow-lg">
-    Selamat Datang
-</h1>
-<h2 class="text-5xl md:text-6xl font-bold text-white font-serif text-shadow-lg">
-    di <span class="text-blue-400">KABAKA</span>
-</h2>
-<h2 class="text-5xl md:text-6xl font-bold text-white font-serif text-shadow-lg">
-    Kamus Bahasa Bangka
-</h2>
+                <h1 class="text-3xl md:text-6xl font-extrabold text-white leading-tight font-serif text-shadow-lg">
+                    Selamat Datang
+                </h1>
+                <h2 class="text-4xl md:text-6xl font-extrabold text-white font-serif text-shadow-lg">
+                    di <span class="text-blue-400">KABAKA</span>
+                </h2>
+                <h2 class="text-3xl md:text-6xl font-extrabold text-white font-serif text-shadow-lg">
+                    Kamus Bahasa Bangka
+                </h2>
 
                 {{-- Description --}}
-                <p class="text-white/100 text-md md:text-lg max-w-2xl mx-auto mt-6 mb-8">
-                    Cari dan temukan <span class="text-white">Bahasa Indonesia</span> <i class="fa-solid fa-arrow-right-arrow-left mx-1"></i> <span class="text-white">Bahasa Bangka</span> dengan mudah, sehingga anda dapat mempelajari dan melestarikannya.
+                <p class="text-white/90 text-md md:text-lg max-w-2xl mx-auto mt-6 mb-8 font-light">
+                    Cari dan temukan <span class="font-semibold text-white">Bahasa Indonesia</span> <i class="fa-solid fa-arrow-right-arrow-left mx-1 text-blue-300"></i> <span class="font-semibold text-white">Bahasa Bangka</span> dengan mudah, sehingga anda dapat mempelajari dan melestarikannya.
                 </p>
             </div>
 
             {{-- Search Card DIBUAT MINIMALIS --}}
             <div class="w-full">
-                {{-- Search Card Header --}}
-                <div class="text-center mb-6">
-                    {{-- IKON DAN TEKS "Cari Kata" DIHAPUS DARI SINI --}}
-                </div>
-
-                {{-- Search Inputs & Button --}}
-                <div class="space-y-4 max-w-2xl mx-auto">
+                {{-- Search Card Header DIHAPUS, fokus ke input --}}
+                <div class="space-y-4 max-w-3xl mx-auto">
                     <div class="grid grid-cols-1 md:grid-cols-[2fr,2fr,1fr] gap-4">
                         {{-- Search Input --}}
                         <input
                             type="text"
                             id="search-input"
-                            class="w-full px-4 py-3 bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent rounded-lg border border-gray-300 transition duration-300 shadow-md"
+                            class="w-full px-5 py-3 bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-blue-300 focus:border-blue-400 rounded-xl border-2 border-transparent transition duration-300 shadow-xl"
                             placeholder="Ketik kata yang dicari..."
                             autocomplete="off">
 
                         {{-- Dialect Select --}}
-                        <select id="dialek-select" class="w-full px-4 py-3 bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent rounded-lg border border-gray-300 transition duration-300 shadow-md">
+                        <select id="dialek-select" class="w-full px-5 py-3 bg-white text-gray-800 appearance-none focus:outline-none focus:ring-4 focus:ring-blue-300 focus:border-blue-400 rounded-xl border-2 border-transparent transition duration-300 shadow-xl cursor-pointer">
                             <option class="bg-white text-gray-800" value="semua">Semua Dialek</option>
                             <option class="bg-white text-gray-800" value="Bangka Barat">Bangka Barat</option>
                             <option class="bg-white text-gray-800" value="Bangka Induk">Bangka Induk</option>
@@ -60,7 +55,7 @@
                         </select>
 
                         {{-- Search Button --}}
-                        <button type="button" id="search-button" class="w-full bg-blue-600 text-white rounded-lg px-4 py-3 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-black/50 transition duration-300 font-semibold flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl hover:-translate-y-1 relative active:scale-98">
+                        <button type="button" id="search-button" class="w-full bg-blue-600 text-white rounded-xl px-4 py-3 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300 font-semibold flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:scale-98">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <span class="hidden md:inline">Cari</span>
                         </button>
@@ -68,9 +63,11 @@
                 </div>
 
                 {{-- Search Results Area --}}
-                <div class="w-full pt-8 text-left max-w-3xl mx-auto">
+                <div class="w-full pt-10 text-left max-w-3xl mx-auto">
+                    {{-- Result Count Container (Dipercantik) --}}
                     <div id="result-count-container" class="mb-4 text-center"></div>
-                    <div id="search-results-container" class="max-h-[50vh] overflow-y-auto pr-2 space-y-4">
+
+                    <div id="search-results-container" class="max-h-[60vh] md:max-h-[50vh] overflow-y-auto pr-2 space-y-6">
                         {{-- Hasil akan dimuat di sini oleh JavaScript --}}
                     </div>
                 </div>
@@ -104,32 +101,35 @@
                 return;
             }
 
-            // Skeleton Card untuk Loading State
+            // Skeleton Card untuk Loading State - Diperbarui untuk gaya modern
             const skeletonCard = `
-                <div class="bg-white rounded-lg p-6 animate-pulse">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center mb-4 border-b border-gray-200 pb-4">
+                <div class="bg-white/95 rounded-xl p-6 text-gray-800 animate-pulse shadow-2xl">
+                    <div class="grid grid-cols-1 sm:grid-cols-[2fr_1fr_2fr] gap-4 items-center mb-6 border-b border-gray-100 pb-6">
                         <div class="text-center space-y-2">
-                            <div class="h-4 bg-gray-200 rounded-md w-1/2 mx-auto"></div>
-                            <div class="h-6 bg-gray-300 rounded-md w-3/4 mx-auto"></div>
+                            <div class="h-3 bg-gray-200 rounded w-1/3 mx-auto"></div>
+                            <div class="h-8 bg-gray-300 rounded-lg w-3/4 mx-auto"></div>
+                        </div>
+                        <div class="text-center">
+                            <div class="h-6 w-6 bg-blue-200 rounded-full mx-auto"></div>
                         </div>
                         <div class="text-center space-y-2">
-                            <div class="h-4 bg-gray-200 rounded-md w-1/2 mx-auto"></div>
-                            <div class="h-6 bg-gray-300 rounded-md w-3/4 mx-auto"></div>
-                            <div class="h-3 bg-gray-200 rounded-md w-1/3 mx-auto mt-1"></div>
+                            <div class="h-3 bg-gray-200 rounded w-1/3 mx-auto"></div>
+                            <div class="h-8 bg-gray-300 rounded-lg w-3/4 mx-auto"></div>
+                            <div class="h-3 bg-gray-200 rounded w-1/4 mx-auto mt-1"></div>
                         </div>
                     </div>
                     <div class="space-y-4">
-                        <div class="flex gap-3">
+                        <div class="flex gap-4">
                             <div class="h-5 w-5 bg-gray-200 rounded"></div>
                             <div class="flex-1 space-y-2">
-                                <div class="h-4 bg-gray-200 rounded-md w-1/4"></div>
+                                <div class="h-3 bg-gray-200 rounded-md w-1/4"></div>
                                 <div class="h-3 bg-gray-300 rounded-md w-full"></div>
                             </div>
                         </div>
-                        <div class="flex gap-3">
+                        <div class="flex gap-4">
                             <div class="h-5 w-5 bg-gray-200 rounded"></div>
                             <div class="flex-1 space-y-2">
-                                <div class="h-4 bg-gray-200 rounded-md w-1/4"></div>
+                                <div class="h-3 bg-gray-200 rounded-md w-1/4"></div>
                                 <div class="h-3 bg-gray-300 rounded-md w-full"></div>
                             </div>
                         </div>
@@ -148,54 +148,73 @@
                     return response.json();
                 })
                 .then(data => {
-                    resultCountContainer.innerHTML = `<p class="text-center text-gray-400 mb-6">Menampilkan ${data.length} hasil pencarian</p>`;
+                    // Tampilan hitungan hasil diperbarui
+                    resultCountContainer.innerHTML = `
+                        <p class="text-center text-white/80 text-lg mb-6 font-light">
+                            Menampilkan <span class="font-semibold text-white">${data.length}</span> hasil pencarian untuk "${query}"
+                        </p>
+                    `;
                     resultsContainer.innerHTML = '';
 
                     if (data.length === 0) {
-                        resultsContainer.innerHTML = `<div class="bg-black/20 rounded-lg text-center text-white py-8"><p>Maaf, kata yang Anda cari tidak ditemukan.</p></div>`;
+                        resultsContainer.innerHTML = `
+                            <div class="bg-white/30 backdrop-blur-sm rounded-xl text-center text-white/90 py-10 px-6 shadow-xl flex flex-col items-center justify-center space-y-4">
+                                <i class="fa-regular fa-face-frown-open text-5xl text-blue-300"></i>
+                                <p class="text-2xl md:text-3xl font-bold text-white leading-tight">Kata Tidak Ditemukan</p>
+                                <p class="text-base text-white/70 max-w-md">
+                                    Maaf, kami tidak menemukan hasil untuk "<span class="font-semibold">${query}</span>".
+                                    Coba periksa kembali ejaan atau pilih dialek lain.
+                                </p>
+                            </div>
+                        `;
                         return;
                     }
 
                     data.forEach(item => {
+                        // Ikon dan warna diperbarui untuk kesan modern dan clean
                         const definisiHtml = item.definisi ? `
-                            <div class="flex gap-3">
-                                <i class="fa-solid fa-book-open text-green-500 mt-1"></i>
+                            <div class="flex gap-4 items-start">
+                                <i class="fa-solid fa-book-open text-lg text-blue-500 flex-shrink-0 mt-1"></i>
                                 <div>
-                                    <h4 class="font-semibold text-gray-800">Definisi:</h4>
-                                    <p class="text-sm">${item.definisi}</p>
+                                    <h4 class="font-bold text-gray-800 text-sm md:text-base mb-0.5">Definisi:</h4>
+                                    <p class="text-gray-600 text-sm md:text-base">${item.definisi}</p>
                                 </div>
                             </div>` : '';
 
                         const contohHtml = item.contoh ? `
-                            <div class="flex gap-3">
-                                <i class="fa-solid fa-quote-left text-yellow-500 mt-1"></i>
+                            <div class="flex gap-4 items-start">
+                                <i class="fa-solid fa-lightbulb text-lg text-yellow-500 flex-shrink-0 mt-1"></i>
                                 <div>
-                                    <h4 class="font-semibold text-gray-800">Contoh:</h4>
-                                    <p class="italic text-sm">"${item.contoh}"</p>
+                                    <h4 class="font-bold text-gray-800 text-sm md:text-base mb-0.5">Contoh:</h4>
+                                    <p class="italic text-gray-600 text-sm md:text-base">"${item.contoh}"</p>
                                 </div>
                             </div>` : '';
 
                         const sinonimHtml = item.sinonim ? `
-                            <div class="flex gap-3">
-                                <i class="fa-solid fa-tags text-orange-500 mt-1"></i>
+                            <div class="flex gap-4 items-start">
+                                <i class="fa-solid fa-tags text-lg text-green-500 flex-shrink-0 mt-1"></i>
                                 <div>
-                                    <h4 class="font-semibold text-gray-800">Sinonim:</h4>
-                                    <p class="text-sm">${item.sinonim}</p>
+                                    <h4 class="font-bold text-gray-800 text-sm md:text-base mb-0.5">Sinonim:</h4>
+                                    <p class="text-gray-600 text-sm md:text-base">${item.sinonim}</p>
                                 </div>
                             </div>` : '';
 
+                        // Word Pair Card diperbarui
                         const resultCard = `
-                            <div class="bg-white rounded-lg p-6 text-gray-800 animate-fade-in shadow-xl">
+                            <div class="bg-white/95 backdrop-blur-sm rounded-xl p-6 text-gray-800 animate-fade-in shadow-2xl transition duration-300 hover:shadow-blue-500/30">
                                 {{-- Word Pair --}}
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center mb-4 border-b border-gray-200 pb-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-[2fr_1fr_2fr] gap-4 items-center mb-6 border-b border-gray-100 pb-6">
                                     <div class="text-center">
-                                        <span class="text-sm text-blue-600 font-semibold">Indonesia</span>
-                                        <p class="text-xl font-bold">${item.arti_indonesia}</p>
+                                        <span class="text-sm text-blue-600 font-semibold uppercase tracking-wider">Indonesia</span>
+                                        <p class="text-3xl font-extrabold mt-1">${item.arti_indonesia}</p>
+                                    </div>
+                                    <div class="text-center hidden sm:block">
+                                        <i class="fa-solid fa-arrow-right-arrow-left text-2xl text-blue-400"></i>
                                     </div>
                                     <div class="text-center">
-                                        <span class="text-sm text-red-600 font-semibold">Bangka</span>
-                                        <p class="text-xl font-bold">${item.kata_bangka}</p>
-                                        <span class="text-xs text-gray-500 font-medium uppercase tracking-wider">(${item.dialek})</span>
+                                        <span class="text-sm text-red-600 font-semibold uppercase tracking-wider">Bangka</span>
+                                        <p class="text-3xl font-extrabold mt-1">${item.kata_bangka}</p>
+                                        <span class="text-xs text-gray-500 font-medium uppercase tracking-wider mt-1 block">(${item.dialek})</span>
                                     </div>
                                 </div>
                                 {{-- Details (Definisi, Contoh, Sinonim) --}}
@@ -264,7 +283,7 @@
         width: 8px;
     }
     #search-results-container::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
     }
     #search-results-container::-webkit-scrollbar-thumb {
