@@ -206,7 +206,6 @@
                         <img src="{{ asset('images/logo-dispar-white.png') }}" alt="Logo Dispar White" class="h-8 opacity-80">
                         <span>© 2025 Dinas Pariwisata Kota Pangkalpinang. Semua Hak Dilindungi.</span>
                     </div>
-                    <span>MRJ</span>
                 </div>
             </div>
         </footer>
