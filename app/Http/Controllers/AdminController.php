@@ -34,7 +34,6 @@ class AdminController extends Controller
         $request->validate([
             'kata_bangka' => 'required|string|max:255',
             'arti_indonesia' => 'required|string|max:255',
-            'dialek' => 'required|string',
             'definisi' => 'nullable|string', // Validasi baru
             'contoh' => 'nullable|string',   // Validasi baru
             'sinonim' => 'nullable|string',  // Validasi baru
@@ -72,7 +71,6 @@ class AdminController extends Controller
         $request->validate([
             'kata_bangka' => 'required|string|max:255',
             'arti_indonesia' => 'required|string|max:255',
-            'dialek' => 'required|string',
             'definisi' => 'nullable|string', // Validasi baru
             'contoh' => 'nullable|string',   // Validasi baru
             'sinonim' => 'nullable|string',  // Validasi baru

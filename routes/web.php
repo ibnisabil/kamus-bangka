@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BeritaController;
 
 // == RUTE UNTUK HALAMAN PUBLIK ==
 Route::get('/', [PublicController::class, 'index'])->name('beranda');
@@ -16,6 +17,10 @@ Route::get('/buku-digital', function () {
 
 // BARU: Rute khusus untuk Live Search (API Endpoint)
 Route::get('/search-live', [PublicController::class, 'searchLive'])->name('search.live');
+
+// [ROUTE BARU] Ini adalah route untuk halaman detail berita
+// Kita gunakan '{berita:slug}' agar URL-nya cantik (misal: /berita/festival-budaya-tahunan)
+Route::get('/berita/{berita:slug}', [BeritaController::class, 'show'])->name('berita.show');
 
 // == RUTE UNTUK PENGGUNA YANG SUDAH LOGIN ==
 Route::middleware('auth')->group(function () {

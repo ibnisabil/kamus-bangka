@@ -22,5 +22,7 @@ class DatabaseSeeder extends Seeder
         
         // Memanggil seeder untuk mengisi data 'katas'
         $this->call(KatasTableSeeder::class);
+
+        $this->call(BeritaSeeder::class);
     }
 }

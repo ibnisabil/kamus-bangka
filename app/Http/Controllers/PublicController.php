@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kata;
+use App\Models\Berita; // <-- 1. TAMBAHKAN BARIS INI
 use Illuminate\Http\Request;
 
 class PublicController extends Controller
@@ -12,11 +13,16 @@ class PublicController extends Controller
      */
     public function index(Request $request)
     {
+        // <-- 2. TAMBAHKAN BLOK KODE INI
+        // Ambil 4 berita terbaru dari database
+        $beritas = Berita::latest()->take(4)->get();
+        // --- BATAS TAMBAHAN KODE ---
+
         // Fungsi ini sekarang hanya sebagai fallback jika JavaScript tidak aktif
         return view('beranda', [
             'query' => $request->input('search'),
             'hasil' => [], // Dikosongkan karena hasil akan diambil oleh JavaScript
-            'selectedDialek' => $request->input('dialek'),
+            'beritas' => $beritas // <-- 3. TAMBAHKAN BARIS INI
         ]);
     }
 
@@ -37,7 +43,6 @@ class PublicController extends Controller
     public function searchLive(Request $request)
     {
         $query = $request->input('search');
-        $dialek = $request->input('dialek');
 
         $hasil = [];
 
@@ -51,10 +56,6 @@ class PublicController extends Controller
                   ->orWhere('arti_indonesia', 'like', '%' . $query . '%');
             });
 
-            // Filter dialek jika dipilih
-            if ($dialek && $dialek !== 'semua') {
-                $queryBuilder->where('dialek', $dialek);
-            }
 
             $hasil = $queryBuilder->get();
         }
@@ -63,4 +64,3 @@ class PublicController extends Controller
         return response()->json($hasil);
     }
 }
-

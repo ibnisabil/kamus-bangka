@@ -25,18 +25,6 @@
                             </div>
                         </div>
 
-                        {{-- Dialek --}}
-                        <div class="mb-4">
-                            <label for="dialek" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Dialek:</label>
-                            <select name="dialek" id="dialek" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                                <option value="" disabled selected>Pilih Dialek</option>
-                                <option value="Bangka Barat">Bangka Barat</option>
-                                <option value="Bangka Induk">Bangka Induk</option>
-                                <option value="Bangka Selatan">Bangka Selatan</option>
-                                <option value="Bangka Tengah">Bangka Tengah</option>
-                                <option value="Pangkalpinang">Pangkalpinang</option>
-                            </select>
-                        </div>
 
                         {{-- Definisi --}}
                         <div class="mb-4">

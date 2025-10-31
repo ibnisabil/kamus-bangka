@@ -28,7 +28,6 @@
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">No</th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Kata Bangka</th>
                                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Arti Indonesia</th>
-                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Dialek</th>
                                     <th scope="col" class="relative px-6 py-3">
                                         <span class="sr-only">Edit</span>
                                     </th>
@@ -40,7 +39,6 @@
                                         <td class="px-6 py-4 whitespace-nowrap">{{ $key + 1 }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap font-medium">{{ $kata->kata_bangka }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap">{{ $kata->arti_indonesia }}</td>
-                                        <td class="px-6 py-4 whitespace-nowrap">{{ $kata->dialek }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                             <a href="{{ route('katas.edit', $kata->id) }}" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-900">Edit</a>
                                             <form action="{{ route('katas.destroy', $kata->id) }}" method="POST" class="inline-block ml-4" onsubmit="return confirm('Anda yakin ingin menghapus kata ini?');">

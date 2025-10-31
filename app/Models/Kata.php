@@ -17,7 +17,6 @@ class Kata extends Model
     protected $fillable = [
         'kata_bangka',
         'arti_indonesia',
-        'dialek',
         'definisi', // BARU
         'contoh',   // BARU
         'sinonim',  // BARU

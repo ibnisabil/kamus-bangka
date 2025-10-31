@@ -9,7 +9,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('katas', function (Blueprint $table) {
-            $table->text('definisi')->nullable()->after('dialek');
             $table->text('contoh')->nullable()->after('definisi');
             $table->text('sinonim')->nullable()->after('contoh');
         });
