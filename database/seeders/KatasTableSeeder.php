@@ -15,12 +15,12 @@ class KatasTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
         // Menghapus data yang sudah ada di tabel 'katas' sebelum menyisipkan data baru
         DB::table('katas')->delete(); // <-- Menggunakan DB tanpa \
-        
+
         DB::table('katas')->insert(array ( // <-- Menggunakan DB tanpa \
-            0 => 
+            0 =>
             array (
                 'id' => 1,
                 'kata_bangka' => 'maken',
@@ -28,12 +28,10 @@ class KatasTableSeeder extends Seeder
                 'definisi' => 'test',
                 'contoh' => 'test',
                 'sinonim' => 'test',
-                // Data foto di seeder hanya berupa string path, file foto aslinya harus disalin manual ke storage
-                'foto' => 'fotos/3KdWFoHLf8MzmYFPIwi3TQpj4rNCauMG55ovEI42.jpg', 
                 'created_at' => '2025-10-13 15:36:09',
                 'updated_at' => '2025-10-16 07:46:26',
             ),
-            1 => 
+            1 =>
             array (
                 'id' => 2,
                 'kata_bangka' => 'Maken',
@@ -41,11 +39,10 @@ class KatasTableSeeder extends Seeder
                 'definisi' => 'makan adalah sebuah kegiatan bla bla',
                 'contoh' => 'yo makan cek',
                 'sinonim' => 'santap',
-                'foto' => 'fotos/HwEmWgHr3UDi9llYAITuwVR1zGY4JpAOKEJG6ev3.png',
                 'created_at' => '2025-10-15 13:12:51',
                 'updated_at' => '2025-10-15 15:22:09',
             ),
-            2 => 
+            2 =>
             array (
                 'id' => 3,
                 'kata_bangka' => 'bebulek',
@@ -53,11 +50,10 @@ class KatasTableSeeder extends Seeder
                 'definisi' => 'bebulek adalah sebuah ungkapan yang tidak benar benar',
                 'contoh' => 'ki ne bebulek lah gawi ee',
                 'sinonim' => 'ungkapan',
-                'foto' => NULL,
                 'created_at' => '2025-10-15 15:28:25',
                 'updated_at' => '2025-10-15 15:28:25',
             ),
-            3 => 
+            3 =>
             array (
                 'id' => 4,
                 'kata_bangka' => 'nginum',
@@ -65,12 +61,11 @@ class KatasTableSeeder extends Seeder
                 'definisi' => 'minum bla bla',
                 'contoh' => 'test text',
                 'sinonim' => 'test text',
-                'foto' => NULL,
                 'created_at' => '2025-10-16 07:45:11',
                 'updated_at' => '2025-10-16 07:45:11',
             ),
         ));
-        
-        
+
+
     }
 }

@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('katas', function (Blueprint $table) {
             $table->id();
-            $table->string('kata_bangka'); // Kolom untuk kata dalam bahasa Bangka
-            $table->text('arti_indonesia'); // Kolom untuk arti dalam bahasa Indonesia
-            $table->string('foto')->nullable(); // Kolom untuk path foto, boleh kosong
+            $table->string('kata_bangka');
+            $table->text('arti_indonesia');
+            $table->text('definisi');
+            $table->text('contoh');
+            $table->text('sinonim');
             $table->timestamps();
         });
     }
