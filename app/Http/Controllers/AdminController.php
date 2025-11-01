@@ -3,18 +3,41 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kata;
+use App\Models\Berita;
+use App\Models\Tujuan; // <-- 1. TAMBAHKAN MODEL 'TUJUAN'
+use App\Models\Setting; // <-- 2. TAMBAHKAN MODEL 'SETTING'
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Routing\Controller; // Pastikan ini ada
 
 class AdminController extends Controller
 {
+    /**
+     * [BARU] Menampilkan halaman dashboard admin dengan statistik.
+     */
+    public function dashboard()
+    {
+        $jumlahKamus = Kata::count();
+        $jumlahBerita = Berita::count();
+        $jumlahTujuan = Tujuan::count(); // <-- 3. TAMBAHKAN HITUNGAN TUJUAN
+        $jumlahSetting = Setting::count(); // <-- 4. TAMBAHKAN HITUNGAN SETTING
+
+        return view('admin.dashboard', [
+            'jumlahKamus' => $jumlahKamus,
+            'jumlahBerita' => $jumlahBerita,
+            'jumlahTujuan' => $jumlahTujuan, // <-- 5. KIRIM KE VIEW
+            'jumlahSetting' => $jumlahSetting, // <-- 6. KIRIM KE VIEW
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $katas = Kata::all();
-        return view('admin.dashboard', compact('katas'));
+        // [DIUBAH] Ambil data dengan pagination & kirim ke view yang benar
+        $katas = Kata::latest()->paginate(10); 
+        return view('admin.katas.index', compact('katas'));
     }
 
     /**
@@ -22,7 +45,8 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+        // [DIUBAH] Kirim ke view yang benar
+        return view('admin.katas.create');
     }
 
     /**
@@ -30,18 +54,15 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        // Memvalidasi data yang masuk dari form
         $request->validate([
             'kata_bangka' => 'required|string|max:255',
             'arti_indonesia' => 'required|string|max:255',
-            'definisi' => 'nullable|string', // Validasi baru
-            'contoh' => 'nullable|string',   // Validasi baru
-            'sinonim' => 'nullable|string',  // Validasi baru
+            'definisi' => 'nullable|string',
+            'contoh' => 'nullable|string',
+            'sinonim' => 'nullable|string',
         ]);
 
-        // Membuat data baru menggunakan semua data yang tervalidasi
         Kata::create($request->all());
-
         return redirect()->route('katas.index')->with('success', 'Kata berhasil ditambahkan.');
     }
 
@@ -51,7 +72,8 @@ class AdminController extends Controller
     public function show(Kata $kata)
     {
         // Fungsi ini tidak kita gunakan, bisa diabaikan
-        return view('admin.show', compact('kata'));
+        // [DIUBAH] Kirim ke view yang benar (jika suatu saat dipakai)
+        return view('admin.katas.show', compact('kata'));
     }
 
     /**
@@ -59,7 +81,8 @@ class AdminController extends Controller
      */
     public function edit(Kata $kata)
     {
-        return view('admin.edit', compact('kata'));
+        // [DIUBAH] Kirim ke view yang benar
+        return view('admin.katas.edit', compact('kata'));
     }
 
     /**
@@ -67,18 +90,15 @@ class AdminController extends Controller
      */
     public function update(Request $request, Kata $kata)
     {
-        // Memvalidasi data yang masuk dari form
         $request->validate([
             'kata_bangka' => 'required|string|max:255',
             'arti_indonesia' => 'required|string|max:255',
-            'definisi' => 'nullable|string', // Validasi baru
-            'contoh' => 'nullable|string',   // Validasi baru
-            'sinonim' => 'nullable|string',  // Validasi baru
+            'definisi' => 'nullable|string',
+            'contoh' => 'nullable|string',
+            'sinonim' => 'nullable|string',
         ]);
 
-        // Memperbarui data yang ada menggunakan semua data yang tervalidasi
         $kata->update($request->all());
-
         return redirect()->route('katas.index')->with('success', 'Kata berhasil diperbarui.');
     }
 
@@ -91,4 +111,3 @@ class AdminController extends Controller
         return redirect()->route('katas.index')->with('success', 'Kata berhasil dihapus.');
     }
 }
-

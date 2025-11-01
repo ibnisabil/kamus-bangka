@@ -3,26 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kata;
-use App\Models\Berita; // <-- 1. TAMBAHKAN BARIS INI
+use App\Models\Berita;
+use App\Models\Tujuan;
+use App\Models\Setting; // <-- 1. TAMBAHKAN INI
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller; // <-- Pastikan ini ada
 
 class PublicController extends Controller
 {
     /**
-     * Menampilkan halaman beranda (logika lama, tetap dibutuhkan jika JS gagal).
+     * Menampilkan halaman beranda.
      */
     public function index(Request $request)
     {
-        // <-- 2. TAMBAHKAN BLOK KODE INI
-        // Ambil 4 berita terbaru dari database
         $beritas = Berita::latest()->take(4)->get();
-        // --- BATAS TAMBAHAN KODE ---
-
-        // Fungsi ini sekarang hanya sebagai fallback jika JavaScript tidak aktif
         return view('beranda', [
             'query' => $request->input('search'),
-            'hasil' => [], // Dikosongkan karena hasil akan diambil oleh JavaScript
-            'beritas' => $beritas // <-- 3. TAMBAHKAN BARIS INI
+            'hasil' => [],
+            'beritas' => $beritas
         ]);
     }
 
@@ -31,36 +29,36 @@ class PublicController extends Controller
      */
     public function tentang()
     {
-        return view('tentang');
+        // Ambil data tujuan
+        $tujuans = Tujuan::orderBy('urutan', 'asc')->get();
+        
+        // [BARU] Ambil data settings
+        $settings = Setting::all()->pluck('value', 'key');
+        
+        // Kirim kedua data ke view
+        return view('tentang', [
+            'tujuans' => $tujuans,
+            'settings' => $settings // <-- 2. TAMBAHKAN INI
+        ]);
     }
 
     /**
-     * =========================================================
-     * BARU: Fungsi khusus untuk menangani permintaan Live Search (AJAX)
-     * =========================================================
-     * Fungsi inilah yang akan dipanggil oleh JavaScript di "belakang layar".
+     * Fungsi khusus untuk menangani permintaan Live Search (AJAX)
      */
     public function searchLive(Request $request)
     {
         $query = $request->input('search');
-
         $hasil = [];
 
-        // Hanya cari jika ada input query
         if ($query) {
             $queryBuilder = Kata::query();
-
-            // Logika pencarian dua arah (di kedua kolom)
             $queryBuilder->where(function ($q) use ($query) {
                 $q->where('kata_bangka', 'like', '%' . $query . '%')
                   ->orWhere('arti_indonesia', 'like', '%' . $query . '%');
             });
-
-
             $hasil = $queryBuilder->get();
         }
-
-        // Mengembalikan data dalam format JSON, bukan view HTML
+        
         return response()->json($hasil);
     }
 }

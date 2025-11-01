@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Edit Kata') }}
+            {{ __('Tambah Kata Baru') }}
         </h2>
     </x-slot>
 
@@ -10,40 +10,44 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
-                    <form action="{{ route('katas.update', $kata->id) }}" method="POST">
+                    <form action="{{ route('katas.store') }}" method="POST">
                         @csrf
-                        @method('PUT')
 
+                        {{-- Baris 1: Kata Bangka & Arti Indonesia --}}
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                             <div>
-                                <label for="kata_bangka" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Kata Bangka:</label>
-                                <input type="text" name="kata_bangka" id="kata_bangka" value="{{ $kata->kata_bangka }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                <label for="kata_bangka" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Kata Pariwisata:</label>
+                                <input type="text" name="kata_bangka" id="kata_bangka" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                             </div>
                             <div>
-                                <label for="arti_indonesia" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Arti Indonesia:</label>
-                                <input type="text" name="arti_indonesia" id="arti_indonesia" value="{{ $kata->arti_indonesia }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                                <label for="arti_indonesia" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Arti Bangka:</label>
+                                <input type="text" name="arti_indonesia" id="arti_indonesia" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
                             </div>
                         </div>
 
-                        
+
+                        {{-- Definisi --}}
                         <div class="mb-4">
                             <label for="definisi" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Definisi:</label>
-                            <textarea name="definisi" id="definisi" rows="3" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ $kata->definisi }}</textarea>
+                            <textarea name="definisi" id="definisi" rows="3" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
                         </div>
 
+                        {{-- Contoh --}}
                         <div class="mb-4">
                             <label for="contoh" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Contoh Penggunaan (dalam kalimat):</label>
-                            <textarea name="contoh" id="contoh" rows="3" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">{{ $kata->contoh }}</textarea>
+                            <textarea name="contoh" id="contoh" rows="3" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
                         </div>
 
+                        {{-- Sinonim --}}
                         <div class="mb-4">
                             <label for="sinonim" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Sinonim (pisahkan dengan koma):</label>
-                            <input type="text" name="sinonim" id="sinonim" value="{{ $kata->sinonim }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <input type="text" name="sinonim" id="sinonim" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                         </div>
 
+                        {{-- Tombol Submit --}}
                         <div class="flex items-center justify-between mt-6">
                             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                                Update
+                                Simpan
                             </button>
                             <a href="{{ route('katas.index') }}" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
                                 Batal

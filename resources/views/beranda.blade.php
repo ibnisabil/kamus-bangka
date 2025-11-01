@@ -42,23 +42,40 @@
             {{-- Search Card DIBUAT MINIMALIS --}}
             <div class="w-full">
                 {{-- Search Card Header DIHAPUS, fokus ke input --}}
-                <div class="space-y-4 max-w-3xl mx-auto">
-                    <div class="grid grid-cols-1 md:grid-cols-[1fr,auto] gap-4">
-                        {{-- Search Input --}}
+                <div class="space-y-4 max-w-xl mx-auto">
+                    
+                    {{-- =============================================== --}}
+                    {{-- === [PERUBAHAN DIMULAI DI SINI] === --}}
+                    {{-- =============================================== --}}
+
+                    {{-- [DIUBAH] Ganti 'grid' dengan 'relative' wrapper --}}
+                    <div class="relative w-full">
+                        
+                        {{-- [DIUBAH] Input mendapat padding kanan (pr) untuk memberi ruang bagi tombol --}}
                         <input
                             type="text"
                             id="search-input"
-                            class="w-full px-5 py-3 bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-blue-300 focus:border-blue-400 rounded-xl border-2 border-transparent transition duration-300 shadow-xl"
+                            class="w-full px-5 py-3 bg-white text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-blue-300 focus:border-blue-400 rounded-xl border-2 border-transparent transition duration-300 shadow-xl 
+                                   pr-20 md:pr-28" {{-- Padding kanan: pr-20 (mobile, icon), md:pr-28 (desktop, 'Cari') --}}
                             placeholder="ketika istilah kata pariwisata yang dicari"
                             autocomplete="off">
 
-
-                        {{-- Search Button --}}
-                        <button type="button" id="search-button" class="w-full bg-blue-600 text-white rounded-xl px-4 py-3 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300 font-semibold flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 active:scale-98">
+                        {{-- [DIUBAH] Tombol sekarang 'absolute' dan diposisikan di dalam input --}}
+                        <button type="button" id="search-button" 
+                                class="absolute inset-y-1.5 right-1.5 flex items-center justify-center bg-blue-600 text-white rounded-lg px-4 hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-300 font-semibold shadow-md
+                                       w-auto {{-- Hapus w-full dan py-3 --}}
+                                       gap-2 {{-- Tetap beri gap --}}
+                                       active:scale-98 {{-- Tetap beri efek klik --}}
+                                       ">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <span class="hidden md:inline">Cari</span>
                         </button>
                     </div>
+                    
+                    {{-- =============================================== --}}
+                    {{-- === [PERUBAHAN BERAKHIR DI SINI] === --}}
+                    {{-- =============================================== --}}
+
                 </div>
 
                 {{-- Search Results Area --}}
@@ -105,7 +122,9 @@
             <div class="swiper-slide bg-white rounded-xl shadow-lg overflow-hidden flex flex-col h-auto">
                 {{-- Gambar Berita (Pastikan Anda sudah setup Storage:link) --}}
                 {{-- Ganti 'path/ke/default.jpg' jika Anda belum setup storage --}}
-                <img src="{{ Storage::url($berita->gambar) }}" alt="{{ $berita->judul }}" class="w-full h-auto md:h-[450px] object-cover rounded-xl shadow-lg mb-8">
+                
+                {{-- [CATATAN]: Saya perbaiki sedikit kode gambar Anda agar bisa handle placeholder & upload --}}
+                <img src="{{ \Illuminate\Support\Str::startsWith($berita->gambar, 'http') ? $berita->gambar : Storage::url($berita->gambar) }}" alt="{{ $berita->judul }}" class="w-full h-56 object-cover">
                 
                 {{-- Konten Teks Card --}}
                 <div class="p-6 flex flex-col flex-grow">
@@ -153,7 +172,7 @@
         // --- [KODE BARU] UNTUK INISIALISASI CAROUSEL ---
         const swiper = new Swiper('.swiperBerita', {
             // Parameter opsional
-            loop: true,         // Agar bisa berputar terus
+            loop: {{ $beritas->count() > 1 ? 'true' : 'false' }}, // Nonaktifkan loop jika slide <= 1
             slidesPerView: 1,   // Tampil 1 slide di mobile
             spaceBetween: 30,   // Jarak antar slide 30px
             
@@ -166,7 +185,7 @@
                 },
                 // Saat lebar layar >= 1024px (lg di Tailwind)
                 1024: {
-                    slidesPerView: 3, // Tampilkan 3 slide
+                    slidesPerView: {{ $beritas->count() < 3 ? $beritas->count() : 3 }}, // Tampilkan 3 slide (atau kurang jika data < 3)
                     spaceBetween: 40
                 }
             },
